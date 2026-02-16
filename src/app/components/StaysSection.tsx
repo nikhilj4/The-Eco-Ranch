@@ -1,0 +1,85 @@
+import React from 'react';
+import { Sparkles } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+import { Reveal } from './ui/reveal';
+
+export function StaysSection() {
+    return (
+        <section id="stays" className="py-24 px-4 bg-[#6F8F72] text-white">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-20">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full mb-4">
+                        <Sparkles className="h-4 w-4 text-white" />
+                        <span className="text-sm font-medium text-white">The Residency</span>
+                    </div>
+                    <h2 className="text-3xl md:text-6xl font-bold mb-6">Stay the Night</h2>
+                    <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
+                        A sanctuary for those who want to linger longer
+                    </p>
+                    <p className="text-sm text-white/60 mt-3">Includes all meals and ranch treks • Safari rides not included</p>
+                </div>
+
+                <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
+                    <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-3xl overflow-hidden">
+                        <CardHeader>
+                            <CardTitle className="text-lg md:text-2xl font-bold">Rustic Tent</CardTitle>
+                            <CardDescription className="text-white/70 text-xs md:text-base">Sleep under the stars in comfort</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-xl md:text-5xl font-bold text-[#F2A65A] mb-3 md:mb-6">
+                                Rs 1,300<span className="text-xs md:text-sm text-white/60 font-normal">/person</span>
+                            </div>
+                            <img
+                                src="https://images.unsplash.com/photo-1623721123297-1bf349fe2340?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydXN0aWMlMjB0ZW50JTIwY2FtcGluZyUyMG5hdHVyZXxlbnwxfHx8fDE3NzEwNjgxNzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="Rustic tent"
+                                className="w-full h-48 object-cover rounded-2xl mb-6"
+                            />
+                            <Button className="w-full h-8 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full py-2 md:py-6 text-xs md:text-base font-medium">Book Now</Button>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-3xl overflow-hidden">
+                        <CardHeader>
+                            <CardTitle className="text-lg md:text-2xl font-bold">Cozy Dorm</CardTitle>
+                            <CardDescription className="text-white/70 text-xs md:text-base">Shared accommodation with fellow adventurers</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-xl md:text-5xl font-bold text-[#F2A65A] mb-3 md:mb-6">
+                                Rs 1,800<span className="text-xs md:text-sm text-white/60 font-normal">/person</span>
+                            </div>
+                            <img
+                                src="https://images.unsplash.com/photo-1765655367035-ff516ef27919?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZSUyMHRyYWlsJTIwcmlkaW5nJTIwYWR2ZW50dXJlfGVufDF8fHx8MTc3MTA2ODE3N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="Cozy dorm"
+                                className="w-full h-48 object-cover rounded-2xl mb-6"
+                            />
+                            <Button className="w-full bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full py-6 font-medium">Book Now</Button>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="bg-white/10 backdrop-blur-md border-2 border-[#F2A65A] text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-3xl overflow-hidden relative">
+                        <div className="absolute top-4 right-4">
+                            <Badge className="bg-[#F2A65A] text-white rounded-full px-4 py-1">Most Popular</Badge>
+                        </div>
+                        <CardHeader>
+                            <CardTitle className="text-lg md:text-2xl font-bold">Private Room</CardTitle>
+                            <CardDescription className="text-white/70 text-xs md:text-base">Your own space with complete privacy</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-xl md:text-5xl font-bold text-[#F2A65A] mb-3 md:mb-6">
+                                Rs 4,500<span className="text-xs md:text-sm text-white/60 font-normal">/for 2</span>
+                            </div>
+                            <img
+                                src="https://images.unsplash.com/photo-1759357865886-96c9b0388c2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZWJhY2slMjByaWRpbmclMjBzdW5yaXNlJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY4MTc3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                alt="Private room"
+                                className="w-full h-48 object-cover rounded-2xl mb-6"
+                            />
+                            <Button className="w-full bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full py-6 font-medium">Book Now</Button>
+                        </CardContent>
+                    </Card>
+                </Reveal>
+            </div>
+        </section>
+    );
+}
