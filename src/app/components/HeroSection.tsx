@@ -22,7 +22,7 @@ export function HeroSection() {
                     transition={{ duration: 0.8 }}
                 >
                     <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tight leading-none text-white">
-                        The Eco Ranch
+                        Best Horse Safari in Bangalore
                     </h1>
                     <p className="text-xl md:text-3xl font-semibold text-[#F2A65A] mb-8 font-heading">
                         Sustainable Living Paradise
