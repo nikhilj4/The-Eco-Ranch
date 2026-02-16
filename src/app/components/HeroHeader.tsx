@@ -38,7 +38,12 @@ export function HeroHeader() {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <span className="font-heading font-bold text-2xl tracking-tighter text-stone-900">The Eco Ranch</span>
+                                <img 
+                                    src="/logo.jpg" 
+                                    alt="The Eco Ranch Logo" 
+                                    className="h-12 w-auto object-contain"
+                                />
+                                <span className="font-heading font-bold text-2xl tracking-tighter text-stone-900 sr-only">The Eco Ranch</span>
                             </a>
 
                             <button
