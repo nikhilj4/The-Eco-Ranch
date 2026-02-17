@@ -200,7 +200,7 @@ export function FocusRail({
                             <motion.div
                                 key={absIndex}
                                 className={cn(
-                                    "absolute aspect-[3/4] w-[260px] md:w-[300px] rounded-2xl border-t border-white/20 bg-neutral-900 shadow-2xl transition-shadow duration-300",
+                                    "absolute aspect-[3/4] w-[260px] md:w-[300px] rounded-2xl border-t border-white/20 bg-neutral-900 shadow-2xl transition-shadow duration-300 overflow-hidden",
                                     isCenter ? "z-20 shadow-white/10" : "z-10"
                                 )}
                                 initial={false}
@@ -226,15 +226,28 @@ export function FocusRail({
                                     if (offset !== 0) setActive((p) => p + offset);
                                 }}
                             >
-                                <img
-                                    src={item.imageSrc}
-                                    alt={item.title}
-                                    className="h-full w-full rounded-2xl object-cover pointer-events-none"
-                                />
-
-                                {/* Lighting layers */}
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
-                                <div className="absolute inset-0 rounded-2xl bg-black/10 pointer-events-none mix-blend-multiply" />
+                                {isCenter && item.href && item.href.includes("instagram.com/reel") ? (
+                                    <iframe
+                                        src={`${item.href}/embed`}
+                                        className="absolute inset-0 w-full h-full pointer-events-auto"
+                                        frameBorder="0"
+                                        scrolling="no"
+                                        allowTransparency={true}
+                                        allow="encrypted-media"
+                                        title={item.title}
+                                    />
+                                ) : (
+                                    <>
+                                        <img
+                                            src={item.imageSrc}
+                                            alt={item.title}
+                                            className="h-full w-full rounded-2xl object-cover pointer-events-none"
+                                        />
+                                        {/* Lighting layers */}
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                                        <div className="absolute inset-0 rounded-2xl bg-black/10 pointer-events-none mix-blend-multiply" />
+                                    </>
+                                )}
                             </motion.div>
                         );
                     })}
