@@ -57,13 +57,70 @@ export function BookingSection() {
 
     const handlePaymentSuccess = () => {
         const formattedDate = date ? date.toLocaleDateString() : 'N/A';
-        const items = Object.entries(cart).map(([id, qty]) => {
-            const product = PRODUCTS.find(p => p.id === id);
-            return `${product?.name} x${qty}`;
-        }).join(', ');
+        const invoiceNumber = `INV-${Date.now().toString().slice(-6)}`;
 
-        console.log(`Booking Confirmed: ${items} on ${formattedDate} at ${time}. Email: ${email}`);
-        alert('Booking Confirmed! You will receive an email shortly.');
+        // Generate PDF Invoice
+        import('jspdf').then(jsPDF => {
+            import('jspdf-autotable').then(autoTable => {
+                const doc = new jsPDF.default();
+
+                // Header
+                doc.setFontSize(20);
+                doc.setTextColor(40, 40, 40);
+                doc.text("The Eco Ranch", 105, 20, { align: "center" });
+
+                doc.setFontSize(10);
+                doc.text("Kanakapura, Karnataka", 105, 26, { align: "center" });
+                doc.text("Contact: +91 95914 27954", 105, 31, { align: "center" });
+
+                // Divider
+                doc.setDrawColor(200, 200, 200);
+                doc.line(15, 35, 195, 35);
+
+                // Invoice Details
+                doc.setFontSize(12);
+                doc.text(`Invoice #: ${invoiceNumber}`, 15, 45);
+                doc.text(`Date: ${new Date().toLocaleDateString()}`, 150, 45);
+
+                doc.text(`Billed To:`, 15, 55);
+                doc.setFontSize(11);
+                doc.setTextColor(100);
+                doc.text(name, 15, 61);
+                doc.text(email, 15, 66);
+
+                doc.setTextColor(40);
+                doc.text(`Visit Date: ${formattedDate}`, 150, 61);
+                doc.text(`Time: ${time}`, 150, 66);
+
+                // Table
+                const tableData = Object.entries(cart).map(([id, qty]) => {
+                    const product = PRODUCTS.find(p => p.id === id);
+                    if (!product) return [];
+                    return [product.name, qty, `Rs ${product.price.toLocaleString()}`, `Rs ${(product.price * qty).toLocaleString()}`];
+                });
+
+                // @ts-ignore
+                autoTable.default(doc, {
+                    startY: 75,
+                    head: [['Item', 'Qty', 'Price', 'Total']],
+                    body: tableData,
+                    theme: 'grid',
+                    headStyles: { fillColor: [111, 143, 114] }, // Ranch Green
+                    foot: [['', '', 'Grand Total', `Rs ${totalAmount.toLocaleString()}`]],
+                    footStyles: { fillColor: [242, 166, 90] } // Ranch Orange
+                });
+
+                // Footer
+                doc.setFontSize(10);
+                doc.setTextColor(150);
+                doc.text("Thank you for choosing The Eco Ranch!", 105, 280, { align: "center" });
+
+                doc.save(`Invoice_${invoiceNumber}.pdf`);
+            });
+        });
+
+        console.log(`Booking Confirmed: ${invoiceNumber} for ${email}`);
+        alert('Booking Confirmed! Your invoice is downloading.');
         setCart({});
         setName('');
         setEmail('');
