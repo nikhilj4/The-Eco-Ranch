@@ -22,7 +22,7 @@ export function RanchRules() {
                 <Reveal className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6">
                     <Card className="border-0 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow">
                         <CardHeader>
-                            <div className="flex items-start gap-5">
+                            <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 md:gap-5">
                                 <div className="bg-[#6F8F72]/10 p-2 md:p-4 rounded-2xl">
                                     <Scale className="h-5 w-5 md:h-8 md:w-8 text-[#6F8F72]" />
                                 </div>
@@ -38,7 +38,7 @@ export function RanchRules() {
 
                     <Card className="border-0 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow">
                         <CardHeader>
-                            <div className="flex items-start gap-5">
+                            <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 md:gap-5">
                                 <div className="bg-[#6F8F72]/10 p-2 md:p-4 rounded-2xl">
                                     <Shirt className="h-5 w-5 md:h-8 md:w-8 text-[#6F8F72]" />
                                 </div>
@@ -54,7 +54,7 @@ export function RanchRules() {
 
                     <Card className="border-0 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow">
                         <CardHeader>
-                            <div className="flex items-start gap-5">
+                            <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 md:gap-5">
                                 <div className="bg-[#6F8F72]/10 p-2 md:p-4 rounded-2xl">
                                     <Clock className="h-5 w-5 md:h-8 md:w-8 text-[#6F8F72]" />
                                 </div>
@@ -70,7 +70,7 @@ export function RanchRules() {
 
                     <Card className="border-0 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow">
                         <CardHeader>
-                            <div className="flex items-start gap-5">
+                            <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 md:gap-5">
                                 <div className="bg-[#6F8F72]/10 p-2 md:p-4 rounded-2xl">
                                     <MapPin className="h-5 w-5 md:h-8 md:w-8 text-[#6F8F72]" />
                                 </div>
