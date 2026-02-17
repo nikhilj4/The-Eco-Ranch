@@ -5,48 +5,56 @@ import { X } from 'lucide-react';
 const galleryItems = [
   {
     id: 1,
+    type: 'image',
     src: "/images/gallery/gallery-1.png",
     alt: "Horse riding adventure trail",
     span: "md:col-span-2 md:row-span-2"
   },
   {
     id: 2,
-    src: "/images/gallery/gallery-2.png",
-    alt: "Jeep Safari",
+    type: 'video',
+    src: "/videos/gallery/video-1.mov",
+    alt: "Jeep Safari Video",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 3,
-    src: "/images/gallery/gallery-3.png",
-    alt: "Camping tent sunset",
+    type: 'video',
+    src: "/videos/gallery/video-2.mov",
+    alt: "Camping Vibe Video",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 4,
+    type: 'image',
     src: "/images/gallery/gallery-4.png",
     alt: "Forest trail",
     span: "md:col-span-1 md:row-span-2"
   },
   {
     id: 5,
-    src: "/images/gallery/gallery-5.png",
-    alt: "Horse ranch",
+    type: 'video',
+    src: "/videos/gallery/video-3.mov",
+    alt: "Horse ranch activity",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 6,
-    src: "/images/gallery/gallery-6.png",
+    type: 'video',
+    src: "/videos/gallery/video-4.mov",
     alt: "Outdoor adventure group",
     span: "md:col-span-2 md:row-span-1"
   },
   {
     id: 7,
+    type: 'image',
     src: "/images/gallery/gallery-7.png",
     alt: "Horse close up",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 8,
+    type: 'image',
     src: "/images/gallery/gallery-8.png",
     alt: "Scenic mountain view",
     span: "md:col-span-2 md:row-span-1"
@@ -57,7 +65,7 @@ export function Gallery() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="py-24 px-4">
+    <section id="gallery" className="py-24 px-4 bg-stone-50">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Captured Moments</h2>
@@ -76,12 +84,31 @@ export function Gallery() {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <img
-                src={item.src}
-                alt={item.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              {item.type === 'video' ? (
+                <video
+                  src={item.src}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              )}
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
+              {/* Play icon overlay for videos to indicate interactivity */}
+              {item.type === 'video' && (
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="bg-white/30 backdrop-blur-sm p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+                  </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -98,20 +125,36 @@ export function Gallery() {
           >
             <motion.div
               layoutId={`card-${selectedId}`}
-              className="relative w-full max-w-5xl h-[80vh] rounded-2xl overflow-hidden"
+              className="relative w-full max-w-5xl h-[80vh] rounded-2xl overflow-hidden bg-black flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelectedId(null)}
                 className="absolute top-4 right-4 z-50 bg-black/50 p-2 rounded-full hover:bg-black/70 text-white transition-colors"
+                aria-label="Close"
               >
                 <X className="h-6 w-6" />
               </button>
-              <img
-                src={galleryItems.find(i => i.id === selectedId)?.src || ""}
-                alt="Gallery Preview"
-                className="w-full h-full object-contain"
-              />
+
+              {(() => {
+                const item = galleryItems.find(i => i.id === selectedId);
+                if (!item) return null;
+
+                return item.type === 'video' ? (
+                  <video
+                    src={item.src}
+                    className="w-full h-full object-contain"
+                    controls
+                    autoPlay
+                  />
+                ) : (
+                  <img
+                    src={item.src}
+                    alt="Gallery Preview"
+                    className="w-full h-full object-contain"
+                  />
+                );
+              })()}
             </motion.div>
           </motion.div>
         )}
