@@ -25,9 +25,9 @@ export function SignatureExperiences() {
                     <h3 className="text-3xl font-bold mb-10 text-center">Safari Rides</h3>
                     <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-10">
                         {[
-                            { name: 'Farmland Tour', price: '3,500', description: 'Gentle ride through scenic farmlands', duration: '2.5-3 hours', image: '/images/gallery/gallery-9.png' },
-                            { name: 'Wildwood Safari', price: '4,000', description: 'Adventure through forest trails', duration: '2.5-3 hours', image: '/images/gallery/gallery-2.png' },
-                            { name: 'Summit Ride', price: '4,500', description: 'Challenge yourself with hill climbs', duration: '2.5-3 hours', image: '/images/gallery/gallery-11.png' }
+                            { name: 'Farmland Tour', price: '3,500', description: 'Gentle ride through scenic farmlands', duration: '2.5-3 hours', image: '/images/experiences/farmland-tour.png' },
+                            { name: 'Wildwood Safari', price: '4,000', description: 'Adventure through forest trails', duration: '2.5-3 hours', image: '/images/experiences/wildwood-safari.png' },
+                            { name: 'Summit Ride', price: '4,500', description: 'Challenge yourself with hill climbs', duration: '2.5-3 hours', image: '/images/experiences/summit-ride.png' }
                         ].map((ride) => (
                             <Card key={ride.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden group">
                                 <div className="relative h-48 overflow-hidden">

@@ -25,10 +25,10 @@ export function HeroSection() {
                     transition={{ duration: 0.8 }}
                 >
                     <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tight leading-none text-white">
-                        Best Horse Safari in Bangalore
+                        The Eco Ranch
                     </h1>
                     <p className="text-xl md:text-3xl font-semibold text-[#F2A65A] mb-8 font-heading">
-                        Sustainable Living Paradise
+                        Best Horse Safari in Bangalore
                     </p>
                     <p className="text-lg md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto font-light leading-relaxed">
                         Where every step, trot, and breeze through the trees is part of a story. Join us for a horseback safari designed to blend comfort, adventure, and meaningful connection.
