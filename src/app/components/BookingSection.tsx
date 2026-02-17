@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { AppointmentDatePicker } from './ui/appointment-calendar';
-import { PaymentModal } from './ui/payment-modal';
+
 import { Reveal } from './ui/reveal';
 import { Plus, Minus, Trash2, ShoppingCart } from 'lucide-react';
 
@@ -39,20 +39,14 @@ export function BookingSection() {
         return sum + (product ? product.price * qty : 0);
     }, 0);
 
-    const handleSubmit = () => {
-        if (!name || !email) {
-            alert('Please enter your name and email');
-            return;
-        }
-        if (totalAmount === 0) {
-            alert('Please select at least one experience or stay');
-            return;
-        }
-        if (!date || !time) {
-            alert('Please select a date and time');
-            return;
-        }
-        setIsPaymentModalOpen(true);
+    const loadScript = (src: string) => {
+        return new Promise((resolve) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => resolve(true);
+            script.onerror = () => resolve(false);
+            document.body.appendChild(script);
+        });
     };
 
     const handlePaymentSuccess = async () => {
@@ -61,7 +55,7 @@ export function BookingSection() {
 
         try {
             // Send Invoice Email via API
-            await fetch('/api/send-invoice', {
+            await fetch('http://localhost:3001/api/send-invoice', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -144,6 +138,73 @@ export function BookingSection() {
         setCart({});
         setName('');
         setEmail('');
+    };
+
+    const handleBook = async () => {
+        if (!name || !email) {
+            alert('Please enter your name and email');
+            return;
+        }
+        if (totalAmount === 0) {
+            alert('Please select at least one experience or stay');
+            return;
+        }
+        if (!date || !time) {
+            alert('Please select a date and time');
+            return;
+        }
+
+        // 1. Load Razorpay Script
+        const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
+
+        if (!res) {
+            alert('Razorpay SDK failed to load. Are you online?');
+            return;
+        }
+
+        // 2. Create Order on Server (Force 1 Rupee for Testing)
+        try {
+            const result = await fetch('http://localhost:3001/api/razorpay', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: 1 }), // TESTING: 1 Rupee
+            });
+
+            const data = await result.json();
+
+            if (!data.success) {
+                alert('Server error. Please try again.');
+                return;
+            }
+
+            const options = {
+                key: data.key,
+                amount: data.amount,
+                currency: data.currency,
+                name: "The Eco Ranch",
+                description: "Booking Payment",
+                order_id: data.orderId,
+                handler: function (response: any) {
+                    console.log("Payment ID: ", response.razorpay_payment_id);
+                    handlePaymentSuccess();
+                },
+                prefill: {
+                    name: name,
+                    email: email,
+                    contact: "+919591427954", // Demo contact or user input if available
+                },
+                theme: {
+                    color: "#F2A65A",
+                },
+            };
+
+            const paymentObject = new (window as any).Razorpay(options);
+            paymentObject.open();
+
+        } catch (error) {
+            console.error("Payment Error:", error);
+            alert('Something went wrong. check console.');
+        }
     };
 
     return (
@@ -279,7 +340,7 @@ export function BookingSection() {
                                 </div>
 
                                 <Button
-                                    onClick={handleSubmit}
+                                    onClick={handleBook}
                                     size="lg"
                                     className="w-full rounded-xl bg-[#F2A65A] text-white hover:bg-[#F2A65A]/90 font-bold h-12 mt-4"
                                     disabled={totalAmount === 0 || !date || !time}
@@ -287,24 +348,13 @@ export function BookingSection() {
                                     Proceed to Book
                                 </Button>
                                 <p className="text-xs text-stone-400 text-center mt-2">
-                                    Secure payment via PhonePe
+                                    Secure Payment
                                 </p>
                             </div>
                         </div>
                     </Reveal>
                 </div>
             </div>
-
-            {isPaymentModalOpen && (
-                <PaymentModal
-                    isOpen={isPaymentModalOpen}
-                    onClose={() => setIsPaymentModalOpen(false)}
-                    totalAmount={totalAmount}
-                    onSuccess={handlePaymentSuccess}
-                    email={email}
-                    contact={"+91 95914 27954"}
-                />
-            )}
         </section>
     );
 }
