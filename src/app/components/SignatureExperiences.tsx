@@ -23,14 +23,14 @@ export function SignatureExperiences() {
                 {/* Safari Rides */}
                 <div className="mb-20">
                     <h3 className="text-3xl font-bold mb-10 text-center">Safari Rides</h3>
-                    <Reveal className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-10">
                         {[
                             { name: 'Farmland Tour', price: '3,500', description: 'Gentle ride through scenic farmlands', duration: '2.5-3 hours', image: '/images/experiences/farmland-tour.png' },
                             { name: 'Wildwood Safari', price: '4,000', description: 'Adventure through forest trails', duration: '2.5-3 hours', image: '/images/experiences/wildwood-safari.png' },
                             { name: 'Summit Ride', price: '4,500', description: 'Challenge yourself with hill climbs', duration: '2.5-3 hours', image: '/images/experiences/summit-ride.png' }
                         ].map((ride) => (
-                            <Card key={ride.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden group">
-                                <div className="relative h-48 overflow-hidden">
+                            <Card key={ride.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-2xl md:rounded-3xl overflow-hidden group">
+                                <div className="relative h-32 md:h-48 overflow-hidden">
                                     <img
                                         src={ride.image}
                                         alt={ride.name}
@@ -39,22 +39,22 @@ export function SignatureExperiences() {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 </div>
-                                <CardHeader className="pb-4">
-                                    <div className="flex items-start justify-between mb-3">
-                                        <CardTitle className="text-lg md:text-2xl font-bold">{ride.name}</CardTitle>
-                                        <Badge className="bg-[#6F8F72] text-white rounded-full px-3">Direct Pay</Badge>
+                                <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
+                                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-2 md:mb-3 gap-1">
+                                        <CardTitle className="text-sm md:text-2xl font-bold leading-tight">{ride.name}</CardTitle>
+                                        <Badge className="bg-[#6F8F72] text-white rounded-full px-1.5 py-0.5 text-[10px] md:text-xs md:px-3 w-fit">Direct Pay</Badge>
                                     </div>
-                                    <CardDescription className="text-xs md:text-base">{ride.description}</CardDescription>
-                                    <p className="text-sm text-stone-500 mt-2">{ride.duration}</p>
+                                    <CardDescription className="text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">{ride.description}</CardDescription>
+                                    <p className="text-[10px] md:text-sm text-stone-500 mt-1 md:mt-2">{ride.duration}</p>
                                 </CardHeader>
-                                <CardContent>
-                                    <div className="text-xl md:text-4xl font-bold text-[#F2A65A] mb-3 md:mb-6">
-                                        Rs {ride.price}<span className="text-xs md:text-sm text-stone-500 font-normal">/person</span>
+                                <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                                    <div className="text-lg md:text-4xl font-bold text-[#F2A65A] mb-2 md:mb-6">
+                                        Rs {ride.price}<span className="text-[10px] md:text-sm text-stone-500 font-normal">/person</span>
                                     </div>
-                                    <Button asChild className="w-full h-12 md:h-auto bg-[#6F8F72] hover:bg-[#6F8F72]/90 text-white rounded-full text-base font-medium group-hover:scale-105 transition-transform">
+                                    <Button asChild className="w-full h-8 md:h-12 bg-[#6F8F72] hover:bg-[#6F8F72]/90 text-white rounded-full text-xs md:text-base font-medium group-hover:scale-105 transition-transform">
                                         <a href="#contact">
                                             Book Now
-                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                            <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
                                     </Button>
                                 </CardContent>
@@ -64,12 +64,12 @@ export function SignatureExperiences() {
 
                     {/* What's Included */}
                     <Reveal delay={0.2}>
-                        <Card className="bg-[#6F8F72]/5 border-[#6F8F72]/20 border-2 rounded-3xl">
-                            <CardHeader>
-                                <CardTitle className="text-2xl">What&apos;s Included</CardTitle>
+                        <Card className="bg-[#6F8F72]/5 border-[#6F8F72]/20 border-2 rounded-2xl md:rounded-3xl">
+                            <CardHeader className="p-4 md:p-6">
+                                <CardTitle className="text-xl md:text-2xl">What&apos;s Included</CardTitle>
                             </CardHeader>
-                            <CardContent>
-                                <ul className="grid md:grid-cols-2 gap-4">
+                            <CardContent className="p-4 md:p-6 pt-0 md:pt-0">
+                                <ul className="grid md:grid-cols-2 gap-3 md:gap-4">
                                     {[
                                         '2.5 - 3 Hour Guided Trail',
                                         'Sunrise Batch: Fresh Ranch Breakfast',
@@ -77,11 +77,11 @@ export function SignatureExperiences() {
                                         'Horse Grooming & Feeding Interaction',
                                         'Maximum 3 riders per batch for safety'
                                     ].map((item) => (
-                                        <li key={item} className="flex items-start gap-3">
-                                            <div className="bg-[#6F8F72] rounded-full p-1 mt-0.5">
-                                                <Check className="h-4 w-4 text-white" />
+                                        <li key={item} className="flex items-start gap-2 md:gap-3">
+                                            <div className="bg-[#6F8F72] rounded-full p-0.5 md:p-1 mt-0.5">
+                                                <Check className="h-3 w-3 md:h-4 md:w-4 text-white" />
                                             </div>
-                                            <span className="text-base">{item}</span>
+                                            <span className="text-sm md:text-base">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -93,13 +93,13 @@ export function SignatureExperiences() {
                 {/* Photography Sessions */}
                 <div>
                     <h3 className="text-3xl font-bold mb-10 text-center">Photography Sessions</h3>
-                    <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <Reveal className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6 max-w-4xl mx-auto">
                         {[
                             { name: 'Wedding Photoshoot', description: 'Capture your special day with majestic horses in nature', image: '/images/gallery/gallery-1.png' },
                             { name: 'Individual Photoshoot', description: 'Professional portraits in stunning natural settings', image: '/images/gallery/gallery-10.png' }
                         ].map((shoot) => (
-                            <Card key={shoot.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden group">
-                                <div className="relative h-48 overflow-hidden">
+                            <Card key={shoot.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-2xl md:rounded-3xl overflow-hidden group">
+                                <div className="relative h-32 md:h-48 overflow-hidden">
                                     <img
                                         src={shoot.image}
                                         alt={shoot.name}
@@ -108,19 +108,19 @@ export function SignatureExperiences() {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 </div>
-                                <CardHeader className="pb-4">
-                                    <div className="flex items-start justify-between mb-3">
-                                        <CardTitle className="text-lg md:text-2xl font-bold">{shoot.name}</CardTitle>
-                                        <Badge variant="outline" className="border-[#F2A65A] text-[#F2A65A] rounded-full px-3">Enquiry</Badge>
+                                <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
+                                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-2 md:mb-3 gap-1">
+                                        <CardTitle className="text-sm md:text-2xl font-bold leading-tight">{shoot.name}</CardTitle>
+                                        <Badge variant="outline" className="border-[#F2A65A] text-[#F2A65A] rounded-full px-1.5 py-0.5 text-[10px] md:text-xs md:px-3 w-fit">Enquiry</Badge>
                                     </div>
-                                    <CardDescription className="text-xs md:text-base">{shoot.description}</CardDescription>
+                                    <CardDescription className="text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">{shoot.description}</CardDescription>
                                 </CardHeader>
-                                <CardContent>
-                                    <div className="text-lg md:text-3xl font-bold text-stone-700 mb-3 md:mb-6">Custom Quote</div>
-                                    <Button asChild variant="outline" className="w-full h-12 md:h-auto border-2 border-[#F2A65A] text-[#F2A65A] hover:bg-[#F2A65A] hover:text-white rounded-full text-base font-medium transition-all">
+                                <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                                    <div className="text-sm md:text-3xl font-bold text-stone-700 mb-2 md:mb-6">Custom Quote</div>
+                                    <Button asChild variant="outline" className="w-full h-8 md:h-12 border-2 border-[#F2A65A] text-[#F2A65A] hover:bg-[#F2A65A] hover:text-white rounded-full text-xs md:text-base font-medium transition-all">
                                         <a href="#contact">
                                             Get a Quote
-                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                            <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                                         </a>
                                     </Button>
                                 </CardContent>

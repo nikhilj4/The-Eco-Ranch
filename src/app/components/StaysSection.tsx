@@ -21,68 +21,68 @@ export function StaysSection() {
                     <p className="text-sm text-white/60 mt-3">Includes all meals and ranch treks • Safari rides not included</p>
                 </div>
 
-                <Reveal className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-3xl overflow-hidden">
-                        <CardHeader>
-                            <CardTitle className="text-lg md:text-2xl font-bold">Rustic Tent</CardTitle>
-                            <CardDescription className="text-white/70 text-xs md:text-base">Sleep under the stars in comfort</CardDescription>
+                <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
+                    <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-2xl md:rounded-3xl overflow-hidden">
+                        <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
+                            <CardTitle className="text-sm md:text-2xl font-bold">Rustic Tent</CardTitle>
+                            <CardDescription className="text-white/70 text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">Sleep under the stars in comfort</CardDescription>
                         </CardHeader>
-                        <CardContent>
-                            <div className="text-xl md:text-5xl font-bold text-[#F2A65A] mb-3 md:mb-6">
-                                Rs 1,300<span className="text-xs md:text-sm text-white/60 font-normal">/person</span>
+                        <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                            <div className="text-lg md:text-5xl font-bold text-[#F2A65A] mb-2 md:mb-6">
+                                Rs 1,300<span className="text-[10px] md:text-sm text-white/60 font-normal">/person</span>
                             </div>
                             <img
                                 src="/images/gallery/gallery-4.png"
                                 alt="Rustic tent"
-                                className="w-full h-48 object-cover rounded-2xl mb-6"
+                                className="w-full h-32 md:h-48 object-cover rounded-xl md:rounded-2xl mb-3 md:mb-6"
                                 loading="lazy"
                             />
-                            <Button asChild className="w-full h-12 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-base font-medium">
+                            <Button asChild className="w-full h-8 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-xs md:text-base font-medium">
                                 <a href="#contact">Book Now</a>
                             </Button>
                         </CardContent>
                     </Card>
 
-                    <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-3xl overflow-hidden">
-                        <CardHeader>
-                            <CardTitle className="text-lg md:text-2xl font-bold">Cozy Dorm</CardTitle>
-                            <CardDescription className="text-white/70 text-xs md:text-base">Shared accommodation with fellow adventurers</CardDescription>
+                    <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-2xl md:rounded-3xl overflow-hidden">
+                        <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
+                            <CardTitle className="text-sm md:text-2xl font-bold">Cozy Dorm</CardTitle>
+                            <CardDescription className="text-white/70 text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">Shared accommodation with fellow adventurers</CardDescription>
                         </CardHeader>
-                        <CardContent>
-                            <div className="text-xl md:text-5xl font-bold text-[#F2A65A] mb-3 md:mb-6">
-                                Rs 1,800<span className="text-xs md:text-sm text-white/60 font-normal">/person</span>
+                        <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                            <div className="text-lg md:text-5xl font-bold text-[#F2A65A] mb-2 md:mb-6">
+                                Rs 1,800<span className="text-[10px] md:text-sm text-white/60 font-normal">/person</span>
                             </div>
                             <img
                                 src="/images/gallery/gallery-7.png"
                                 alt="Cozy dorm"
-                                className="w-full h-48 object-cover rounded-2xl mb-6"
+                                className="w-full h-32 md:h-48 object-cover rounded-xl md:rounded-2xl mb-3 md:mb-6"
                                 loading="lazy"
                             />
-                            <Button asChild className="w-full h-12 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-base font-medium">
+                            <Button asChild className="w-full h-8 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-xs md:text-base font-medium">
                                 <a href="#contact">Book Now</a>
                             </Button>
                         </CardContent>
                     </Card>
 
-                    <Card className="bg-white/10 backdrop-blur-md border-2 border-[#F2A65A] text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-3xl overflow-hidden relative">
-                        <div className="absolute top-4 right-4">
-                            <Badge className="bg-[#F2A65A] text-white rounded-full px-4 py-1">Most Popular</Badge>
+                    <Card className="bg-white/10 backdrop-blur-md border-2 border-[#F2A65A] text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-2xl md:rounded-3xl overflow-hidden relative">
+                        <div className="absolute top-2 right-2 md:top-4 md:right-4">
+                            <Badge className="bg-[#F2A65A] text-white rounded-full px-2 py-0.5 text-[10px] md:px-4 md:py-1 md:text-sm">Most Popular</Badge>
                         </div>
-                        <CardHeader>
-                            <CardTitle className="text-lg md:text-2xl font-bold">Private Room</CardTitle>
-                            <CardDescription className="text-white/70 text-xs md:text-base">Your own space with complete privacy</CardDescription>
+                        <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
+                            <CardTitle className="text-sm md:text-2xl font-bold">Private Room</CardTitle>
+                            <CardDescription className="text-white/70 text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">Your own space with complete privacy</CardDescription>
                         </CardHeader>
-                        <CardContent>
-                            <div className="text-xl md:text-5xl font-bold text-[#F2A65A] mb-3 md:mb-6">
-                                Rs 4,500<span className="text-xs md:text-sm text-white/60 font-normal">/for 2</span>
+                        <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                            <div className="text-lg md:text-5xl font-bold text-[#F2A65A] mb-2 md:mb-6">
+                                Rs 4,500<span className="text-[10px] md:text-sm text-white/60 font-normal">/for 2</span>
                             </div>
                             <img
                                 src="/images/gallery/gallery-8.png"
                                 alt="Private room"
-                                className="w-full h-48 object-cover rounded-2xl mb-6"
+                                className="w-full h-32 md:h-48 object-cover rounded-xl md:rounded-2xl mb-3 md:mb-6"
                                 loading="lazy"
                             />
-                            <Button asChild className="w-full h-12 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-base font-medium">
+                            <Button asChild className="w-full h-8 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-xs md:text-base font-medium">
                                 <a href="#contact">Book Now</a>
                             </Button>
                         </CardContent>
