@@ -4,6 +4,7 @@ import { HeroSection } from './components/HeroSection';
 import { SignatureExperiences } from './components/SignatureExperiences';
 import { PremiumAddOns } from './components/PremiumAddOns';
 import { SEOContent } from './components/SEOContent';
+import { ReelsSection } from './components/ReelsSection';
 import { Gallery } from './components/Gallery';
 import { StaysSection } from './components/StaysSection';
 import { RanchRules } from './components/RanchRules';
@@ -19,6 +20,7 @@ export default function App() {
       <SignatureExperiences />
       <PremiumAddOns />
       <Gallery />
+      <ReelsSection />
       <SEOContent />
       <StaysSection />
       <RanchRules />
