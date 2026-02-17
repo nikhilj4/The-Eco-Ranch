@@ -21,7 +21,7 @@ export function StaysSection() {
                     <p className="text-sm text-white/60 mt-3">Includes all meals and ranch treks • Safari rides not included</p>
                 </div>
 
-                <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
+                <Reveal className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-3xl overflow-hidden">
                         <CardHeader>
                             <CardTitle className="text-lg md:text-2xl font-bold">Rustic Tent</CardTitle>
@@ -35,8 +35,11 @@ export function StaysSection() {
                                 src="/images/gallery/gallery-4.png"
                                 alt="Rustic tent"
                                 className="w-full h-48 object-cover rounded-2xl mb-6"
+                                loading="lazy"
                             />
-                            <Button className="w-full h-8 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full py-2 md:py-6 text-xs md:text-base font-medium">Book Now</Button>
+                            <Button asChild className="w-full h-12 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-base font-medium">
+                                <a href="#contact">Book Now</a>
+                            </Button>
                         </CardContent>
                     </Card>
 
@@ -53,8 +56,11 @@ export function StaysSection() {
                                 src="/images/gallery/gallery-7.png"
                                 alt="Cozy dorm"
                                 className="w-full h-48 object-cover rounded-2xl mb-6"
+                                loading="lazy"
                             />
-                            <Button className="w-full bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full py-6 font-medium">Book Now</Button>
+                            <Button asChild className="w-full h-12 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-base font-medium">
+                                <a href="#contact">Book Now</a>
+                            </Button>
                         </CardContent>
                     </Card>
 
@@ -74,8 +80,11 @@ export function StaysSection() {
                                 src="/images/gallery/gallery-8.png"
                                 alt="Private room"
                                 className="w-full h-48 object-cover rounded-2xl mb-6"
+                                loading="lazy"
                             />
-                            <Button className="w-full bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full py-6 font-medium">Book Now</Button>
+                            <Button asChild className="w-full h-12 md:h-auto bg-[#F2A65A] hover:bg-[#F2A65A]/90 text-white rounded-full text-base font-medium">
+                                <a href="#contact">Book Now</a>
+                            </Button>
                         </CardContent>
                     </Card>
                 </Reveal>

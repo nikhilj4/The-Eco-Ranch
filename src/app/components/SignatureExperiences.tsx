@@ -23,7 +23,7 @@ export function SignatureExperiences() {
                 {/* Safari Rides */}
                 <div className="mb-20">
                     <h3 className="text-3xl font-bold mb-10 text-center">Safari Rides</h3>
-                    <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-10">
+                    <Reveal className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                         {[
                             { name: 'Farmland Tour', price: '3,500', description: 'Gentle ride through scenic farmlands', duration: '2.5-3 hours', image: '/images/experiences/farmland-tour.png' },
                             { name: 'Wildwood Safari', price: '4,000', description: 'Adventure through forest trails', duration: '2.5-3 hours', image: '/images/experiences/wildwood-safari.png' },
@@ -35,6 +35,7 @@ export function SignatureExperiences() {
                                         src={ride.image}
                                         alt={ride.name}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 </div>
@@ -50,9 +51,11 @@ export function SignatureExperiences() {
                                     <div className="text-xl md:text-4xl font-bold text-[#F2A65A] mb-3 md:mb-6">
                                         Rs {ride.price}<span className="text-xs md:text-sm text-stone-500 font-normal">/person</span>
                                     </div>
-                                    <Button className="w-full h-8 md:h-auto bg-[#6F8F72] hover:bg-[#6F8F72]/90 text-white rounded-full py-2 md:py-6 text-xs md:text-base font-medium group-hover:scale-105 transition-transform">
-                                        PhonePe
-                                        <ArrowRight className="ml-2 h-4 w-4" />
+                                    <Button asChild className="w-full h-12 md:h-auto bg-[#6F8F72] hover:bg-[#6F8F72]/90 text-white rounded-full text-base font-medium group-hover:scale-105 transition-transform">
+                                        <a href="#contact">
+                                            Book Now
+                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                        </a>
                                     </Button>
                                 </CardContent>
                             </Card>
@@ -90,7 +93,7 @@ export function SignatureExperiences() {
                 {/* Photography Sessions */}
                 <div>
                     <h3 className="text-3xl font-bold mb-10 text-center">Photography Sessions</h3>
-                    <Reveal className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6 max-w-4xl mx-auto">
+                    <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                         {[
                             { name: 'Wedding Photoshoot', description: 'Capture your special day with majestic horses in nature', image: '/images/gallery/gallery-1.png' },
                             { name: 'Individual Photoshoot', description: 'Professional portraits in stunning natural settings', image: '/images/gallery/gallery-10.png' }
@@ -101,6 +104,7 @@ export function SignatureExperiences() {
                                         src={shoot.image}
                                         alt={shoot.name}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 </div>
@@ -113,9 +117,11 @@ export function SignatureExperiences() {
                                 </CardHeader>
                                 <CardContent>
                                     <div className="text-lg md:text-3xl font-bold text-stone-700 mb-3 md:mb-6">Custom Quote</div>
-                                    <Button variant="outline" className="w-full h-8 md:h-auto border-2 border-[#F2A65A] text-[#F2A65A] hover:bg-[#F2A65A] hover:text-white rounded-full py-2 md:py-6 text-xs md:text-base font-medium transition-all">
-                                        Get a Quote
-                                        <ArrowRight className="ml-2 h-4 w-4" />
+                                    <Button asChild variant="outline" className="w-full h-12 md:h-auto border-2 border-[#F2A65A] text-[#F2A65A] hover:bg-[#F2A65A] hover:text-white rounded-full text-base font-medium transition-all">
+                                        <a href="#contact">
+                                            Get a Quote
+                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                        </a>
                                     </Button>
                                 </CardContent>
                             </Card>
