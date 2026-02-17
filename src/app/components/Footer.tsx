@@ -29,7 +29,7 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-white/20 pt-8 text-center text-white/60">
-                    <p>&copy; 2026 Kanakapura Ranch. All rights reserved.</p>
+                    <p>&copy; 2026 The Eco Ranch. All rights reserved.</p>
                 </div>
             </div>
         </footer>

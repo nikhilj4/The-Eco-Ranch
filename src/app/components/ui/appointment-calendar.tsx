@@ -66,7 +66,7 @@ export const AppointmentDatePicker = ({ onDateChange, onTimeChange }: Appointmen
             }}
         >
             <DatePicker.Content className="p-4 md:p-6 gap-6 flex flex-col md:flex-row items-center md:items-start bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl shadow-sm overflow-hidden w-full">
-                <div className="flex-1 w-full md:w-auto transform scale-[0.7] md:scale-100 origin-top mx-auto md:mx-0 -mb-24 md:mb-0">
+                <div className="flex-1 w-full md:w-auto flex flex-col items-center transform scale-[0.85] md:scale-100 origin-top mx-auto md:mx-0 -mb-16 md:mb-0">
                     <DatePicker.View view="day" className="flex-1">
                         <DatePicker.Context>
                             {(api) => (

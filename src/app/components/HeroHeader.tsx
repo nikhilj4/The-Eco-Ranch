@@ -5,11 +5,10 @@ import { Button } from './ui/button';
 import { cn } from './ui/utils';
 
 const menuItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
+    { name: 'About', href: '#rules' },
+    { name: 'Services', href: '#experiences' },
     { name: 'Gallery', href: '#gallery' },
-    { name: 'Reviews', href: '#reviews' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '#booking' },
 ]
 
 export function HeroHeader() {
@@ -38,9 +37,9 @@ export function HeroHeader() {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <img 
-                                    src="/logo.jpg" 
-                                    alt="The Eco Ranch Logo" 
+                                <img
+                                    src="/logo.jpg"
+                                    alt="The Eco Ranch Logo"
                                     className="h-12 w-auto object-contain"
                                 />
                                 <span className="font-heading font-bold text-2xl tracking-tighter text-stone-900 sr-only">The Eco Ranch</span>

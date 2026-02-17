@@ -6,7 +6,7 @@ import { Reveal } from './ui/reveal';
 
 export function RanchRules() {
     return (
-        <section className="py-24 px-4 bg-[#E8E2D8]">
+        <section id="rules" className="py-24 px-4 bg-[#E8E2D8]">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#6F8F72]/10 rounded-full mb-4">

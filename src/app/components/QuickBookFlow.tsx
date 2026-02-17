@@ -32,12 +32,12 @@ export function QuickBookFlow() {
                         {
                             step: '3',
                             title: 'Pay',
-                            description: 'Secure payment via PhonePe'
+                            description: 'Secure payment via Razorpay'
                         },
                         {
                             step: '4',
                             title: 'Confirmed',
-                            description: 'Get invoice on WhatsApp + add to Google Calendar'
+                            description: 'Get invoice on Email + add to Google Calendar ICS format'
                         }
                     ].map((item) => (
                         <div key={item.step} className="text-center">
