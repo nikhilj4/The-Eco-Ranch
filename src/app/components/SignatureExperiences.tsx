@@ -4,6 +4,7 @@ import { Card, CardContent, CardTitle, CardDescription, CardHeader } from './ui/
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Reveal } from './ui/reveal';
+import { PackageModal } from './PackageModal';
 
 export function SignatureExperiences() {
     return (
@@ -25,40 +26,70 @@ export function SignatureExperiences() {
                     <h3 className="text-3xl font-bold mb-10 text-center">Safari Rides</h3>
                     <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-10">
                         {[
-                            { name: 'Farmland Tour', price: '3,500', description: 'Gentle ride through scenic farmlands', duration: '2.5-3 hours', image: '/images/experiences/farmland-tour.png' },
-                            { name: 'Wildwood Safari', price: '4,000', description: 'Adventure through forest trails', duration: '2.5-3 hours', image: '/images/experiences/wildwood-safari.png' },
-                            { name: 'Summit Ride', price: '4,500', description: 'Challenge yourself with hill climbs', duration: '2.5-3 hours', image: '/images/experiences/summit-ride.png' }
+                            {
+                                name: 'Farmland Tour',
+                                price: '3,500',
+                                description: 'Gentle ride through scenic farmlands',
+                                duration: '2.5-3 hours',
+                                image: '/images/experiences/farmland-tour.png',
+                                details: ['2.5-3 Hours Duration', ' scenic farmland trails', 'Suitable for beginners', 'Safety gear included']
+                            },
+                            {
+                                name: 'Wildwood Safari',
+                                price: '4,000',
+                                description: 'Adventure through forest trails',
+                                duration: '2.5-3 hours',
+                                image: '/images/experiences/wildwood-safari.png',
+                                details: ['2.5-3 Hours Duration', 'Forest exploration', 'Intermediate skill level', 'Wildlife spotting opportunities']
+                            },
+                            {
+                                name: 'Summit Ride',
+                                price: '4,500',
+                                description: 'Challenge yourself with hill climbs',
+                                duration: '2.5-3 hours',
+                                image: '/images/experiences/summit-ride.png',
+                                details: ['2.5-3 Hours Duration', 'Hill climbing challenge', 'Advanced skill level', 'Panoramic views']
+                            }
                         ].map((ride) => (
-                            <Card key={ride.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-2xl md:rounded-3xl overflow-hidden group">
-                                <div className="relative h-32 md:h-48 overflow-hidden">
-                                    <img
-                                        src={ride.image}
-                                        alt={ride.name}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                </div>
-                                <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
-                                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-2 md:mb-3 gap-1">
-                                        <CardTitle className="text-sm md:text-2xl font-bold leading-tight">{ride.name}</CardTitle>
-                                        <Badge className="bg-[#6F8F72] text-white rounded-full px-1.5 py-0.5 text-[10px] md:text-xs md:px-3 w-fit">Direct Pay</Badge>
-                                    </div>
-                                    <CardDescription className="text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">{ride.description}</CardDescription>
-                                    <p className="text-[10px] md:text-sm text-stone-500 mt-1 md:mt-2">{ride.duration}</p>
-                                </CardHeader>
-                                <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
-                                    <div className="text-lg md:text-4xl font-bold text-[#F2A65A] mb-2 md:mb-6">
-                                        Rs {ride.price}<span className="text-[10px] md:text-sm text-stone-500 font-normal">/person</span>
-                                    </div>
-                                    <Button asChild className="w-full h-8 md:h-12 bg-[#6F8F72] hover:bg-[#6F8F72]/90 text-white rounded-full text-xs md:text-base font-medium group-hover:scale-105 transition-transform">
-                                        <a href="#contact">
-                                            Book Now
-                                            <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
-                                        </a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
+                            <PackageModal
+                                key={ride.name}
+                                title={ride.name}
+                                price={`Rs ${ride.price}`}
+                                description={ride.description}
+                                image={ride.image}
+                                unit="/person"
+                                details={ride.details}
+                                trigger={
+                                    <Card className="h-full hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer text-left">
+                                        <div className="relative h-32 md:h-48 overflow-hidden">
+                                            <img
+                                                src={ride.image}
+                                                alt={ride.name}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                loading="lazy"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                        </div>
+                                        <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
+                                            <div className="flex flex-col md:flex-row md:items-start justify-between mb-2 md:mb-3 gap-1">
+                                                <CardTitle className="text-sm md:text-2xl font-bold leading-tight">{ride.name}</CardTitle>
+                                                <Badge className="bg-[#6F8F72] text-white rounded-full px-1.5 py-0.5 text-[10px] md:text-xs md:px-3 w-fit">Direct Pay</Badge>
+                                            </div>
+                                            <CardDescription className="text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">{ride.description}</CardDescription>
+                                            <p className="text-[10px] md:text-sm text-stone-500 mt-1 md:mt-2">{ride.duration}</p>
+                                        </CardHeader>
+                                        <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                                            <div className="text-lg md:text-4xl font-bold text-[#F2A65A] mb-2 md:mb-6">
+                                                Rs {ride.price}<span className="text-[10px] md:text-sm text-stone-500 font-normal">/person</span>
+                                            </div>
+                                            <div className="w-full h-8 md:h-12 bg-[#6F8F72] text-white rounded-full text-xs md:text-base font-medium group-hover:scale-105 transition-transform flex items-center justify-center">
+                                                View Details
+                                                <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                }
+                            />
                         ))}
                     </Reveal>
 
@@ -100,36 +131,55 @@ export function SignatureExperiences() {
                     <h3 className="text-3xl font-bold mb-10 text-center">Photography Sessions</h3>
                     <Reveal className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6 max-w-4xl mx-auto">
                         {[
-                            { name: 'Wedding Photoshoot', description: 'Capture your special day with majestic horses in nature', image: '/images/gallery/gallery-1.png' },
-                            { name: 'Individual Photoshoot', description: 'Professional portraits in stunning natural settings', image: '/images/gallery/gallery-10.png' }
+                            {
+                                name: 'Wedding Photoshoot',
+                                description: 'Capture your special day with majestic horses in nature',
+                                image: '/images/gallery/gallery-1.png',
+                                details: ["Magical golden hour shots", "Well-groomed horses", "Assistants provided", "Unlimited outfit changes"]
+                            },
+                            {
+                                name: 'Individual Photoshoot',
+                                description: 'Professional portraits in stunning natural settings',
+                                image: '/images/gallery/gallery-10.png',
+                                details: ["Professional lighting setup", "Styling assistance", "Multiple locations", "10 High-res edits"]
+                            }
                         ].map((shoot) => (
-                            <Card key={shoot.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-2xl md:rounded-3xl overflow-hidden group">
-                                <div className="relative h-32 md:h-48 overflow-hidden">
-                                    <img
-                                        src={shoot.image}
-                                        alt={shoot.name}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                                </div>
-                                <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
-                                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-2 md:mb-3 gap-1">
-                                        <CardTitle className="text-sm md:text-2xl font-bold leading-tight">{shoot.name}</CardTitle>
-                                        <Badge variant="outline" className="border-[#F2A65A] text-[#F2A65A] rounded-full px-1.5 py-0.5 text-[10px] md:text-xs md:px-3 w-fit">Enquiry</Badge>
-                                    </div>
-                                    <CardDescription className="text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">{shoot.description}</CardDescription>
-                                </CardHeader>
-                                <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
-                                    <div className="text-sm md:text-3xl font-bold text-stone-700 mb-2 md:mb-6">Custom Quote</div>
-                                    <Button asChild variant="outline" className="w-full h-8 md:h-12 border-2 border-[#F2A65A] text-[#F2A65A] hover:bg-[#F2A65A] hover:text-white rounded-full text-xs md:text-base font-medium transition-all">
-                                        <a href="#contact">
-                                            Get a Quote
-                                            <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
-                                        </a>
-                                    </Button>
-                                </CardContent>
-                            </Card>
+                            <PackageModal
+                                key={shoot.name}
+                                title={shoot.name}
+                                price="Custom Quote"
+                                description={shoot.description}
+                                image={shoot.image}
+                                details={shoot.details}
+                                ctaText="Enquire Now"
+                                trigger={
+                                    <Card className="h-full hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer text-left">
+                                        <div className="relative h-32 md:h-48 overflow-hidden">
+                                            <img
+                                                src={shoot.image}
+                                                alt={shoot.name}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                loading="lazy"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                        </div>
+                                        <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
+                                            <div className="flex flex-col md:flex-row md:items-start justify-between mb-2 md:mb-3 gap-1">
+                                                <CardTitle className="text-sm md:text-2xl font-bold leading-tight">{shoot.name}</CardTitle>
+                                                <Badge variant="outline" className="border-[#F2A65A] text-[#F2A65A] rounded-full px-1.5 py-0.5 text-[10px] md:text-xs md:px-3 w-fit">Enquiry</Badge>
+                                            </div>
+                                            <CardDescription className="text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">{shoot.description}</CardDescription>
+                                        </CardHeader>
+                                        <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
+                                            <div className="text-sm md:text-3xl font-bold text-stone-700 mb-2 md:mb-6">Custom Quote</div>
+                                            <div className="w-full h-8 md:h-12 border-2 border-[#F2A65A] text-[#F2A65A] hover:bg-[#F2A65A] hover:text-white rounded-full text-xs md:text-base font-medium transition-all flex items-center justify-center">
+                                                Get a Quote
+                                                <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                }
+                            />
                         ))}
                     </Reveal>
                 </div>
