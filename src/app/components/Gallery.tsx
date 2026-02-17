@@ -53,7 +53,7 @@ const galleryItems = [
   {
     id: 7,
     type: 'image',
-    src: "/images/gallery/gallery-4.png",
+    src: "/images/gallery/gallery-6.png",
     alt: "Forest Trail",
     span: "md:col-span-1 md:row-span-1"
   },

@@ -32,7 +32,7 @@ export function StaysSection() {
                                 Rs 1,300<span className="text-xs md:text-sm text-white/60 font-normal">/person</span>
                             </div>
                             <img
-                                src="/images/gallery/gallery-6.png"
+                                src="/images/gallery/gallery-4.png"
                                 alt="Rustic tent"
                                 className="w-full h-48 object-cover rounded-2xl mb-6"
                             />
