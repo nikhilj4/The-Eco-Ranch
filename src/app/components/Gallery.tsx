@@ -3,62 +3,127 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 
 const galleryItems = [
+  // Row 1
   {
     id: 1,
-    type: 'image',
-    src: "/images/gallery/gallery-1.png",
-    alt: "Horse riding adventure trail",
+    type: 'video',
+    src: "/videos/gallery/video-1.mov",
+    alt: "Ranch Adventure Video",
     span: "md:col-span-2 md:row-span-2"
   },
   {
     id: 2,
-    type: 'video',
-    src: "/videos/gallery/video-1.mov",
-    alt: "Jeep Safari Video",
+    type: 'image',
+    src: "/images/gallery/gallery-3.png",
+    alt: "Scenic View",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 3,
     type: 'video',
     src: "/videos/gallery/video-2.mov",
-    alt: "Camping Vibe Video",
+    alt: "Morning Routine",
     span: "md:col-span-1 md:row-span-1"
   },
+
+  // Row 2 (mixed)
   {
     id: 4,
-    type: 'image',
-    src: "/images/gallery/gallery-4.png",
-    alt: "Forest trail",
+    type: 'video',
+    src: "/videos/gallery/video-5.mov", // New
+    alt: "Horse Training",
     span: "md:col-span-1 md:row-span-2"
   },
   {
     id: 5,
     type: 'video',
     src: "/videos/gallery/video-3.mov",
-    alt: "Horse ranch activity",
+    alt: "Group Ride",
     span: "md:col-span-1 md:row-span-1"
   },
+
+  // Row 3 (videos heavy)
   {
     id: 6,
     type: 'video',
     src: "/videos/gallery/video-4.mov",
-    alt: "Outdoor adventure group",
+    alt: "Sunset Gallop",
     span: "md:col-span-2 md:row-span-1"
   },
   {
     id: 7,
     type: 'image',
-    src: "/images/gallery/gallery-7.png",
-    alt: "Horse close up",
+    src: "/images/gallery/gallery-4.png",
+    alt: "Forest Trail",
+    span: "md:col-span-1 md:row-span-1"
+  },
+
+  // Row 4
+  {
+    id: 8,
+    type: 'video',
+    src: "/videos/gallery/video-6.mov", // New
+    alt: "Stable Life",
     span: "md:col-span-1 md:row-span-1"
   },
   {
-    id: 8,
+    id: 9,
     type: 'image',
-    src: "/images/gallery/gallery-8.png",
-    alt: "Scenic mountain view",
+    src: "/images/gallery/gallery-5.png",
+    alt: "Ranch Atmosphere",
     span: "md:col-span-2 md:row-span-1"
   },
+  {
+    id: 10,
+    type: 'video',
+    src: "/videos/gallery/video-7.mov", // New
+    alt: "Riding Lesson",
+    span: "md:col-span-1 md:row-span-1"
+  },
+
+  // Row 5 & 6 (filling out grid)
+  {
+    id: 11,
+    type: 'video',
+    src: "/videos/gallery/video-8.mov", // New
+    alt: "Nature Walk",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 12,
+    type: 'video',
+    src: "/videos/gallery/video-9.mov", // New
+    alt: "Horse Care",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 13,
+    type: 'video',
+    src: "/videos/gallery/video-10.mov", // New
+    alt: "Feeding Time",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 14,
+    type: 'video',
+    src: "/videos/gallery/video-11.mov", // New
+    alt: "Reviewing Footage",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 15,
+    type: 'video',
+    src: "/videos/gallery/video-12.mov", // New
+    alt: "Preparing for Ride",
+    span: "md:col-span-2 md:row-span-1"
+  },
+  {
+    id: 16,
+    type: 'video',
+    src: "/videos/gallery/video-13.mov", // New
+    alt: "Relaxing at Camp",
+    span: "md:col-span-2 md:row-span-1"
+  }
 ];
 
 export function Gallery() {
