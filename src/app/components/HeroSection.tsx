@@ -7,10 +7,13 @@ export function HeroSection() {
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
-                <img
-                    src="https://images.unsplash.com/photo-1759357865886-96c9b0388c2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZWJhY2slMjByaWRpbmclMjBzdW5yaXNlJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY4MTc3fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Horseback riding at sunrise"
-                    className="size-full object-cover scale-105 hover:scale-110 transition-transform duration-[20s]"
+                <video
+                    src="/hero-video.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="size-full object-cover scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
             </div>
