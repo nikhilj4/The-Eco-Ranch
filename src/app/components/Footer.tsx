@@ -16,7 +16,7 @@ export function Footer() {
                         <div className="space-y-4">
                             <a href="tel:+917411889506" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                                 <Phone className="h-5 w-5" />
-                                +91-7411889506
+                                +91 74118 89506
                             </a>
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                                 <Instagram className="h-5 w-5" />

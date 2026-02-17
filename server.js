@@ -86,7 +86,7 @@ app.post('/api/send-invoice', async (req, res) => {
                     </div>
 
                     <p>We are excited to host you for your adventure!</p>
-                    <p style="font-size: 12px; color: #888;">For any queries, contact us at +91 95914 27954.</p>
+                    <p style="font-size: 12px; color: #888;">For any queries, contact us at +91 74118 89506.</p>
                 </div>
             `,
         };

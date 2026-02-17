@@ -87,7 +87,7 @@ export function BookingSection() {
 
                 doc.setFontSize(10);
                 doc.text("Kanakapura, Karnataka", 105, 26, { align: "center" });
-                doc.text("Contact: +91 95914 27954", 105, 31, { align: "center" });
+                doc.text("Contact: +91 74118 89506", 105, 31, { align: "center" });
 
                 // Divider
                 doc.setDrawColor(200, 200, 200);
@@ -212,7 +212,7 @@ export function BookingSection() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-secondary/30 relative">
+        <section id="booking" className="py-24 bg-secondary/30 relative">
             <div className="max-w-7xl mx-auto px-4 md:px-8">
                 <Reveal>
                     <div className="mx-auto max-w-2xl text-center mb-16">
