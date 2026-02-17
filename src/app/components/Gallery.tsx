@@ -3,53 +3,53 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 
 const galleryItems = [
-  { 
-    id: 1, 
-    src: "https://images.unsplash.com/photo-1765655367035-ff516ef27919?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZSUyMHJpZGluZyUyMGFkdmVudHVyZSUyMHRyYWlsfGVufDF8fHx8MTc3MTA2OTA1OHww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Horse riding adventure trail", 
-    span: "md:col-span-2 md:row-span-2" 
+  {
+    id: 1,
+    src: "/images/gallery/gallery-1.png",
+    alt: "Horse riding adventure trail",
+    span: "md:col-span-2 md:row-span-2"
   },
-  { 
-    id: 2, 
-    src: "https://images.unsplash.com/photo-1758881534566-fd5c54d7e7c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqZWVwJTIwc2FmYXJpJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY5MDU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Jeep Safari", 
-    span: "md:col-span-1 md:row-span-1" 
+  {
+    id: 2,
+    src: "/images/gallery/gallery-2.png",
+    alt: "Jeep Safari",
+    span: "md:col-span-1 md:row-span-1"
   },
-  { 
-    id: 3, 
-    src: "https://images.unsplash.com/photo-1637481819841-4795ab86da6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1waW5nJTIwdGVudCUyMHN1bnNldHxlbnwxfHx8fDE3NzEwNjkwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Camping tent sunset", 
-    span: "md:col-span-1 md:row-span-1" 
+  {
+    id: 3,
+    src: "/images/gallery/gallery-3.png",
+    alt: "Camping tent sunset",
+    span: "md:col-span-1 md:row-span-1"
   },
-  { 
-    id: 4, 
-    src: "https://images.unsplash.com/photo-1625749670846-8d5629e85a01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb3Jlc3QlMjB0cmFpbCUyMG5hdHVyZXxlbnwxfHx8fDE3NzEwNjkwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Forest trail", 
-    span: "md:col-span-1 md:row-span-2" 
+  {
+    id: 4,
+    src: "/images/gallery/gallery-4.png",
+    alt: "Forest trail",
+    span: "md:col-span-1 md:row-span-2"
   },
-  { 
-    id: 5, 
-    src: "https://images.unsplash.com/photo-1658379515186-b7b9524c9ddb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZSUyMHJhbmNoJTIwZmFybXxlbnwxfHx8fDE3NzEwNjkwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Horse ranch", 
-    span: "md:col-span-1 md:row-span-1" 
+  {
+    id: 5,
+    src: "/images/gallery/gallery-5.png",
+    alt: "Horse ranch",
+    span: "md:col-span-1 md:row-span-1"
   },
-  { 
-    id: 6, 
-    src: "https://images.unsplash.com/photo-1758599669009-5a9002c09487?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwYWR2ZW50dXJlJTIwZ3JvdXB8ZW58MXx8fHwxNzcxMDY5MDYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Outdoor adventure group", 
-    span: "md:col-span-2 md:row-span-1" 
+  {
+    id: 6,
+    src: "/images/gallery/gallery-6.png",
+    alt: "Outdoor adventure group",
+    span: "md:col-span-2 md:row-span-1"
   },
-  { 
-    id: 7, 
-    src: "https://images.unsplash.com/photo-1694941950578-3364241bf12f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZXMlMjBjbG9zZSUyMHVwJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcxMDY5MDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Horse close up", 
-    span: "md:col-span-1 md:row-span-1" 
+  {
+    id: 7,
+    src: "/images/gallery/gallery-7.png",
+    alt: "Horse close up",
+    span: "md:col-span-1 md:row-span-1"
   },
-  { 
-    id: 8, 
-    src: "https://images.unsplash.com/photo-1758380424728-75464be4e55a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZWJhY2slMjBzY2VuaWMlMjBtb3VudGFpbiUyMHZpZXd8ZW58MXx8fHwxNzcxMDY5MDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Scenic mountain view", 
-    span: "md:col-span-2 md:row-span-1" 
+  {
+    id: 8,
+    src: "/images/gallery/gallery-8.png",
+    alt: "Scenic mountain view",
+    span: "md:col-span-2 md:row-span-1"
   },
 ];
 

@@ -32,7 +32,7 @@ export function StaysSection() {
                                 Rs 1,300<span className="text-xs md:text-sm text-white/60 font-normal">/person</span>
                             </div>
                             <img
-                                src="https://images.unsplash.com/photo-1623721123297-1bf349fe2340?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxydXN0aWMlMjB0ZW50JTIwY2FtcGluZyUyMG5hdHVyZXxlbnwxfHx8fDE3NzEwNjgxNzd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                                src="/images/gallery/gallery-6.png"
                                 alt="Rustic tent"
                                 className="w-full h-48 object-cover rounded-2xl mb-6"
                             />
@@ -50,7 +50,7 @@ export function StaysSection() {
                                 Rs 1,800<span className="text-xs md:text-sm text-white/60 font-normal">/person</span>
                             </div>
                             <img
-                                src="https://images.unsplash.com/photo-1765655367035-ff516ef27919?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZSUyMHRyYWlsJTIwcmlkaW5nJTIwYWR2ZW50dXJlfGVufDF8fHx8MTc3MTA2ODE3N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                                src="/images/gallery/gallery-7.png"
                                 alt="Cozy dorm"
                                 className="w-full h-48 object-cover rounded-2xl mb-6"
                             />
@@ -71,7 +71,7 @@ export function StaysSection() {
                                 Rs 4,500<span className="text-xs md:text-sm text-white/60 font-normal">/for 2</span>
                             </div>
                             <img
-                                src="https://images.unsplash.com/photo-1759357865886-96c9b0388c2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZWJhY2slMjByaWRpbmclMjBzdW5yaXNlJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY4MTc3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                                src="/images/gallery/gallery-8.png"
                                 alt="Private room"
                                 className="w-full h-48 object-cover rounded-2xl mb-6"
                             />

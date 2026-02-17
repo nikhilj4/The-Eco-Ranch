@@ -9,7 +9,7 @@ const REEL_ITEMS: FocusRailItem[] = [
         title: "Morning Rides",
         description: "Start your day with a breathtaking sunrise ride.",
         meta: "Instagram Reel",
-        imageSrc: "https://images.unsplash.com/photo-1759357865886-96c9b0388c2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZWJhY2slMjByaWRpbmclMjBzdW5yaXNlJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY4MTc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        imageSrc: "/images/gallery/gallery-3.png",
         href: "https://www.instagram.com/reel/DUnzYZhD0zn",
     },
     {
@@ -17,7 +17,7 @@ const REEL_ITEMS: FocusRailItem[] = [
         title: "Trail Adventures",
         description: "Explore hidden paths and deep forests.",
         meta: "Instagram Reel",
-        imageSrc: "https://images.unsplash.com/photo-1625749670846-8d5629e85a01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb3Jlc3QlMjB0cmFpbCUyMG5hdHVyZXxlbnwxfHx8fDE3NzEwNjkwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        imageSrc: "/images/gallery/gallery-4.png",
         href: "https://www.instagram.com/reel/DUGRCyMk9D-",
     },
     {
@@ -25,7 +25,7 @@ const REEL_ITEMS: FocusRailItem[] = [
         title: "Ranch Vibes",
         description: "Experience the authentic ranch atmosphere.",
         meta: "Instagram Reel",
-        imageSrc: "https://images.unsplash.com/photo-1658379515186-b7b9524c9ddb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZSUyMHJhbmNoJTIwZmFybXxlbnwxfHx8fDE3NzEwNjkwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        imageSrc: "/images/gallery/gallery-5.png",
         href: "https://www.instagram.com/reel/DTNwr9IEwWd",
     },
     {
@@ -33,7 +33,7 @@ const REEL_ITEMS: FocusRailItem[] = [
         title: "Sunset Gallery",
         description: "Watch the sky turn gold over the ranch.",
         meta: "Instagram Reel",
-        imageSrc: "https://images.unsplash.com/photo-1637481819841-4795ab86da6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1waW5nJTIwdGVudCUyMHN1bnNldHxlbnwxfHx8fDE3NzEwNjkwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        imageSrc: "/images/gallery/gallery-1.png",
         href: "https://www.instagram.com/reel/DTNnnolE52l",
     },
     {
@@ -41,7 +41,7 @@ const REEL_ITEMS: FocusRailItem[] = [
         title: "Horse Bonding",
         description: "Connect with our friendly horses.",
         meta: "Instagram Reel",
-        imageSrc: "https://images.unsplash.com/photo-1694941950578-3364241bf12f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZXMlMjBjbG9zZSUyMHVwJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcxMDY5MDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        imageSrc: "/images/gallery/gallery-2.png",
         href: "https://www.instagram.com/reel/DTKZJUyki1w",
     },
     {
@@ -49,7 +49,7 @@ const REEL_ITEMS: FocusRailItem[] = [
         title: "Action Shots",
         description: "Feel the thrill of the gallop.",
         meta: "Instagram Reel",
-        imageSrc: "https://images.unsplash.com/photo-1758881534566-fd5c54d7e7c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqZWVwJTIwc2FmYXJpJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY5MDU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        imageSrc: "/images/gallery/gallery-6.png",
         href: "https://www.instagram.com/reel/DTIcNOfEpNl",
     }
 ];

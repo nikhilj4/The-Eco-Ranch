@@ -25,9 +25,9 @@ export function SignatureExperiences() {
                     <h3 className="text-3xl font-bold mb-10 text-center">Safari Rides</h3>
                     <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-10">
                         {[
-                            { name: 'Farmland Tour', price: '3,500', description: 'Gentle ride through scenic farmlands', duration: '2.5-3 hours', image: 'https://images.unsplash.com/photo-1752337160859-f9e188b5850d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZSUyMGZhcm1sYW5kJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY5NDYxfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-                            { name: 'Wildwood Safari', price: '4,000', description: 'Adventure through forest trails', duration: '2.5-3 hours', image: 'https://images.unsplash.com/photo-1711460004339-d41b16ca8cfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb3Jlc3QlMjB0cmFpbCUyMHdpbGQlMjBuYXR1cmV8ZW58MXx8fHwxNzcxMDY5NDYyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-                            { name: 'Summit Ride', price: '4,500', description: 'Challenge yourself with hill climbs', duration: '2.5-3 hours', image: 'https://images.unsplash.com/photo-1732239808105-d2320100247c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHN1bW1pdCUyMGxhbmRzY2FwZXxlbnwxfHx8fDE3NzEwNjk0NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080' }
+                            { name: 'Farmland Tour', price: '3,500', description: 'Gentle ride through scenic farmlands', duration: '2.5-3 hours', image: '/images/gallery/gallery-9.png' },
+                            { name: 'Wildwood Safari', price: '4,000', description: 'Adventure through forest trails', duration: '2.5-3 hours', image: '/images/gallery/gallery-10.png' },
+                            { name: 'Summit Ride', price: '4,500', description: 'Challenge yourself with hill climbs', duration: '2.5-3 hours', image: '/images/gallery/gallery-11.png' }
                         ].map((ride) => (
                             <Card key={ride.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden group">
                                 <div className="relative h-48 overflow-hidden">
@@ -92,8 +92,8 @@ export function SignatureExperiences() {
                     <h3 className="text-3xl font-bold mb-10 text-center">Photography Sessions</h3>
                     <Reveal className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-6 max-w-4xl mx-auto">
                         {[
-                            { name: 'Wedding Photoshoot', description: 'Capture your special day with majestic horses in nature', image: 'https://images.unsplash.com/photo-1727374703451-c0a912a31ae0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY291cGxlJTIwb3V0ZG9vciUyMG5hdHVyZXxlbnwxfHx8fDE3NzEwMTcxMTV8MA&ixlib=rb-4.1.0&q=80&w=1080' },
-                            { name: 'Individual Photoshoot', description: 'Professional portraits in stunning natural settings', image: 'https://images.unsplash.com/photo-1707454710943-a359e4b5962e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHBob3Rvc2hvb3QlMjBvdXRkb29yfGVufDF8fHx8MTc3MTA2OTQ2M3ww&ixlib=rb-4.1.0&q=80&w=1080' }
+                            { name: 'Wedding Photoshoot', description: 'Capture your special day with majestic horses in nature', image: '/images/gallery/gallery-1.png' },
+                            { name: 'Individual Photoshoot', description: 'Professional portraits in stunning natural settings', image: '/images/gallery/gallery-2.png' }
                         ].map((shoot) => (
                             <Card key={shoot.name} className="hover:shadow-2xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden group">
                                 <div className="relative h-48 overflow-hidden">
