@@ -19,6 +19,7 @@ export function BookingSection() {
     const [time, setTime] = useState<string>('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
     const [cart, setCart] = useState<Record<string, number>>({});
     const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
@@ -65,6 +66,7 @@ export function BookingSection() {
                         date: formattedDate,
                         time,
                         amount: totalAmount.toLocaleString(),
+                        phone: phone,
                     }
                 }),
             });
@@ -100,7 +102,8 @@ export function BookingSection() {
                 doc.setFontSize(11);
                 doc.setTextColor(100);
                 doc.text(name, 15, 61);
-                doc.text(email, 15, 66);
+                doc.text(phone, 15, 66);
+                doc.text(email, 15, 71);
 
                 doc.setTextColor(40);
                 doc.text(`Visit Date: ${formattedDate}`, 150, 61);
@@ -115,7 +118,7 @@ export function BookingSection() {
 
                 // @ts-ignore
                 autoTable.default(doc, {
-                    startY: 75,
+                    startY: 80,
                     head: [['Item', 'Qty', 'Price', 'Total']],
                     body: tableData,
                     theme: 'grid',
@@ -138,11 +141,12 @@ export function BookingSection() {
         setCart({});
         setName('');
         setEmail('');
+        setPhone('');
     };
 
     const handleBook = async () => {
-        if (!name || !email) {
-            alert('Please enter your name and email');
+        if (!name || !email || !phone) {
+            alert('Please enter your name, phone number, and email');
             return;
         }
         if (totalAmount === 0) {
@@ -191,7 +195,7 @@ export function BookingSection() {
                 prefill: {
                     name: name,
                     email: email,
-                    contact: "+919591427954", // Demo contact or user input if available
+                    contact: phone,
                 },
                 theme: {
                     color: "#F2A65A",
@@ -325,6 +329,17 @@ export function BookingSection() {
                                         onChange={(e) => setName(e.target.value)}
                                         className="block w-full rounded-xl border-stone-200 py-2.5 text-sm focus:ring-[#F2A65A] bg-stone-50"
                                         placeholder="Full Name"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-1">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        className="block w-full rounded-xl border-stone-200 py-2.5 text-sm focus:ring-[#F2A65A] bg-stone-50"
+                                        placeholder="+91 98765 43210"
                                     />
                                 </div>
                                 <div>
