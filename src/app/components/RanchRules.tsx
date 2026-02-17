@@ -79,8 +79,10 @@ export function RanchRules() {
                                     <CardDescription className="text-xs md:text-base leading-relaxed mb-3">
                                         Kanakapura
                                     </CardDescription>
-                                    <Button variant="link" className="p-0 h-auto text-xs md:text-base text-[#6F8F72] font-medium hover:text-[#F2A65A]">
-                                        Get Directions →
+                                    <Button asChild variant="link" className="p-0 h-auto text-xs md:text-base text-[#6F8F72] font-medium hover:text-[#F2A65A]">
+                                        <a href="https://maps.app.goo.gl/wqyezESrkbkvofxw7?g_st=ipc" target="_blank" rel="noopener noreferrer">
+                                            Get Directions →
+                                        </a>
                                     </Button>
                                 </div>
                             </div>

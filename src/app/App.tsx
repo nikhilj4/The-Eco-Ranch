@@ -17,13 +17,13 @@ export default function App() {
     <div className="min-h-screen bg-stone-50 selection:bg-[#F2A65A]/30">
       <HeroHeader />
       <HeroSection />
-      <SignatureExperiences />
+      <RanchRules />
       <PremiumAddOns />
+      <SignatureExperiences />
+      <StaysSection />
       <Gallery />
       <ReelsSection />
       <SEOContent />
-      <StaysSection />
-      <RanchRules />
       <QuickBookFlow />
       <BookingSection />
       <Footer />

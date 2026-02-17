@@ -18,7 +18,10 @@ export function StaysSection() {
                     <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
                         A sanctuary for those who want to linger longer
                     </p>
-                    <p className="text-sm text-white/60 mt-3">Includes all meals and ranch treks • Safari rides not included</p>
+                    <div className="text-sm text-white/80 mt-4 space-y-1">
+                        <p><span className="font-semibold text-[#F2A65A]">Inclusions:</span> forest watchtower walk, morning/evening trek, grooming & feeding interactions.</p>
+                        <p><span className="font-semibold text-rose-300">Note:</span> Safari not included in stay packages.</p>
+                    </div>
                 </div>
 
                 <Reveal className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">

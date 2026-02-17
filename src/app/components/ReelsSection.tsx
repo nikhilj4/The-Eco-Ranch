@@ -80,7 +80,7 @@ export function ReelsSection() {
                 <div className="text-center mt-12 space-y-4">
                     <p className="text-white/60 text-sm">Tap or drag cards to explore reels</p>
                     <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full px-8 py-6 text-lg hover:shadow-lg hover:shadow-pink-500/30 transition-all">
-                        <a href="https://www.instagram.com/theecoranch" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <a href="https://www.instagram.com/theecoranch?igsh=MWkzNGhtaGpwNTVhNg==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                             <Instagram className="w-5 h-5" />
                             Follow @theecoranch
                         </a>
