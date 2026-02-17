@@ -27,10 +27,7 @@ export function StaysSection() {
                             <CardDescription className="text-white/70 text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">Sleep under the stars in comfort</CardDescription>
                         </CardHeader>
                         <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
-                            <div className="text-[10px] md:text-xs text-white/80 mb-2 md:mb-4 space-y-0.5">
-                                <p><span className="font-semibold text-[#F2A65A]">Inclusions:</span> forest watchtower walk, morning/evening trek, grooming & feeding interactions.</p>
-                                <p><span className="font-semibold text-rose-300">Note:</span> Safari not included in stay packages.</p>
-                            </div>
+
                             <div className="text-lg md:text-5xl font-bold text-[#F2A65A] mb-2 md:mb-6">
                                 Rs 1,300<span className="text-[10px] md:text-sm text-white/60 font-normal">/person</span>
                             </div>
@@ -52,10 +49,7 @@ export function StaysSection() {
                             <CardDescription className="text-white/70 text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">Shared accommodation with fellow adventurers</CardDescription>
                         </CardHeader>
                         <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
-                            <div className="text-[10px] md:text-xs text-white/80 mb-2 md:mb-4 space-y-0.5">
-                                <p><span className="font-semibold text-[#F2A65A]">Inclusions:</span> forest watchtower walk, morning/evening trek, grooming & feeding interactions.</p>
-                                <p><span className="font-semibold text-rose-300">Note:</span> Safari not included in stay packages.</p>
-                            </div>
+
                             <div className="text-lg md:text-5xl font-bold text-[#F2A65A] mb-2 md:mb-6">
                                 Rs 1,800<span className="text-[10px] md:text-sm text-white/60 font-normal">/person</span>
                             </div>
@@ -80,10 +74,7 @@ export function StaysSection() {
                             <CardDescription className="text-white/70 text-[10px] md:text-base line-clamp-2 md:line-clamp-none leading-snug">Your own space with complete privacy</CardDescription>
                         </CardHeader>
                         <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
-                            <div className="text-[10px] md:text-xs text-white/80 mb-2 md:mb-4 space-y-0.5">
-                                <p><span className="font-semibold text-[#F2A65A]">Inclusions:</span> forest watchtower walk, morning/evening trek, grooming & feeding interactions.</p>
-                                <p><span className="font-semibold text-rose-300">Note:</span> Safari not included in stay packages.</p>
-                            </div>
+
                             <div className="text-lg md:text-5xl font-bold text-[#F2A65A] mb-2 md:mb-6">
                                 Rs 4,500<span className="text-[10px] md:text-sm text-white/60 font-normal">/for 2</span>
                             </div>

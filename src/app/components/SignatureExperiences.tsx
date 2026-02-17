@@ -69,13 +69,15 @@ export function SignatureExperiences() {
                                 <CardTitle className="text-xl md:text-2xl">What&apos;s Included</CardTitle>
                             </CardHeader>
                             <CardContent className="p-4 md:p-6 pt-0 md:pt-0">
-                                <ul className="grid md:grid-cols-2 gap-3 md:gap-4">
+                                <ul className="grid md:grid-cols-2 gap-3 md:gap-4 mb-4">
                                     {[
                                         '2.5 - 3 Hour Guided Trail',
                                         'Sunrise Batch: Fresh Ranch Breakfast',
                                         'Sunset Batch: Evening Tea + Local Snacks',
                                         'Horse Grooming & Feeding Interaction',
-                                        'Maximum 3 riders per batch for safety'
+                                        'Maximum 3 riders per batch for safety',
+                                        'Forest Watchtower Walk',
+                                        'Morning/Evening Trek'
                                     ].map((item) => (
                                         <li key={item} className="flex items-start gap-2 md:gap-3">
                                             <div className="bg-[#6F8F72] rounded-full p-0.5 md:p-1 mt-0.5">
@@ -85,6 +87,9 @@ export function SignatureExperiences() {
                                         </li>
                                     ))}
                                 </ul>
+                                <p className="text-xs md:text-sm text-stone-500 italic border-t pt-4 mt-2">
+                                    <span className="font-semibold text-rose-500">Note:</span> Safari not included in stay packages.
+                                </p>
                             </CardContent>
                         </Card>
                     </Reveal>

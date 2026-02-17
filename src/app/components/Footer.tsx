@@ -25,14 +25,7 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div>
-                        <h4 className="font-bold text-lg mb-6">Quick Links</h4>
-                        <div className="space-y-3">
-                            <a href="#" className="block text-white/80 hover:text-white transition-colors">Safety Waiver</a>
-                            <a href="#" className="block text-white/80 hover:text-white transition-colors">Location Map</a>
-                            <a href="#" className="block text-white/80 hover:text-white transition-colors">Contact Us</a>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div className="border-t border-white/20 pt-8 text-center text-white/60">

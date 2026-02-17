@@ -55,9 +55,29 @@ export function BookingSection() {
         setIsPaymentModalOpen(true);
     };
 
-    const handlePaymentSuccess = () => {
+    const handlePaymentSuccess = async () => {
         const formattedDate = date ? date.toLocaleDateString() : 'N/A';
         const invoiceNumber = `INV-${Date.now().toString().slice(-6)}`;
+
+        try {
+            // Send Invoice Email via API
+            await fetch('/api/send-invoice', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email,
+                    invoiceNumber,
+                    invoiceData: {
+                        date: formattedDate,
+                        time,
+                        amount: totalAmount.toLocaleString(),
+                    }
+                }),
+            });
+            console.log('Invoice email sent successfully');
+        } catch (error) {
+            console.error('Failed to send invoice email', error);
+        }
 
         // Generate PDF Invoice
         import('jspdf').then(jsPDF => {
@@ -120,7 +140,7 @@ export function BookingSection() {
         });
 
         console.log(`Booking Confirmed: ${invoiceNumber} for ${email}`);
-        alert('Booking Confirmed! Your invoice is downloading.');
+        alert('Booking Confirmed! Your invoice has been emailed and is downloading.');
         setCart({});
         setName('');
         setEmail('');
