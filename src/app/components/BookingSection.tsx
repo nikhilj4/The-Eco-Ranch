@@ -188,7 +188,7 @@ export function BookingSection() {
                                 <span className="w-1 h-6 bg-[#6F8F72] rounded-full"></span>
                                 Schedule Your Visit
                             </h3>
-                            <div className="max-w-md mx-auto">
+                            <div className="max-w-5xl mx-auto">
                                 <AppointmentDatePicker
                                     onDateChange={(d) => setDate(d)}
                                     onTimeChange={(t) => setTime(t)}

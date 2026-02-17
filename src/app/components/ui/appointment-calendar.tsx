@@ -65,8 +65,8 @@ export const AppointmentDatePicker = ({ onDateChange, onTimeChange }: Appointmen
                 }
             }}
         >
-            <div className="scale-[0.7] md:scale-100 origin-top mb-[-100px] md:mb-0 w-[140%] md:w-full">
-                <DatePicker.Content className="p-6 gap-6 flex flex-col md:flex-row bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm overflow-hidden w-full max-w-4xl">
+            <DatePicker.Content className="p-4 md:p-6 gap-6 flex flex-col md:flex-row bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl shadow-sm overflow-hidden w-full">
+                <div className="flex-1 w-full md:w-auto transform scale-[0.95] md:scale-100 origin-top">
                     <DatePicker.View view="day" className="flex-1">
                         <DatePicker.Context>
                             {(api) => (
@@ -187,67 +187,66 @@ export const AppointmentDatePicker = ({ onDateChange, onTimeChange }: Appointmen
                             )}
                         </DatePicker.Context>
                     </DatePicker.View>
+                </div>
 
-                    {/* Time Slots Section */}
-                    <DatePicker.Context>
-                        {(api) => {
-                            const selectedDate = api.value[0];
-                            const dateFormatter = new Intl.DateTimeFormat("en-US", {
-                                weekday: "long",
-                            });
-                            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                            const formattedDate = selectedDate
-                                ? dateFormatter.format(selectedDate.toDate(timeZone)) +
-                                ", " +
-                                selectedDate.toDate(timeZone).getDate()
-                                : "";
+                {/* Time Slots Section */}
+                <DatePicker.Context>
+                    {(api) => {
+                        const selectedDate = api.value[0];
+                        const dateFormatter = new Intl.DateTimeFormat("en-US", {
+                            weekday: "long",
+                        });
+                        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                        const formattedDate = selectedDate
+                            ? dateFormatter.format(selectedDate.toDate(timeZone)) +
+                            ", " +
+                            selectedDate.toDate(timeZone).getDate()
+                            : "";
 
-                            return (
-                                <div className="border-l border-gray-200 dark:border-gray-700 w-full md:w-64 relative min-h-[400px]">
-                                    <div className="absolute inset-0 pl-6 overflow-y-auto">
-                                        <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-2 shrink-0 sticky top-0 bg-white dark:bg-gray-800 py-2">
-                                            {formattedDate}
-                                        </h3>
-                                        <p className="text-xs text-stone-500 mb-4 sticky top-10 bg-white dark:bg-gray-800 pb-2">
-                                            <span className="text-[#F2A65A] font-bold">Highlighted:</span> Recommended Sunrise/Sunset Times
-                                        </p>
-                                        <div className="space-y-3 pb-6">
-                                            {timeSlots.map((slot) => {
-                                                const isRecommended = isHighlightTime(slot.time);
-                                                return (
-                                                    <button
-                                                        key={slot.time}
-                                                        onClick={() => {
-                                                            if (slot.available) {
-                                                                setSelectedTime(slot.time);
-                                                                onTimeChange?.(slot.time);
-                                                            }
-                                                        }}
-                                                        disabled={!slot.available}
-                                                        className={`w-full px-4 py-3 text-base rounded-xl border transition-all duration-200 shrink-0 font-medium relative ${selectedTime === slot.time && slot.available
-                                                            ? "bg-[#F2A65A] text-white border-[#F2A65A] shadow-md transform scale-[1.02]"
-                                                            : slot.available
-                                                                ? isRecommended
-                                                                    ? "bg-[#F2A65A]/10 text-[#F2A65A] border-[#F2A65A]/30 hover:bg-[#F2A65A]/20"
-                                                                    : "bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
-                                                                : "bg-gray-50 dark:bg-gray-800/50 text-gray-400 dark:text-gray-600 border-gray-100 dark:border-gray-700/50 cursor-not-allowed opacity-60"
-                                                            }`}
-                                                    >
-                                                        {slot.time}
-                                                        {isRecommended && slot.available && selectedTime !== slot.time && (
-                                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#F2A65A]"></span>
-                                                        )}
-                                                    </button>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
+                        return (
+                            <div className="border-t pt-4 md:pt-0 md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 w-full md:w-72 flex flex-col h-80 md:h-auto md:min-h-[400px]">
+                                <h3 className="text-sm md:text-base font-semibold text-gray-900 dark:text-gray-100 mb-2 shrink-0 md:pl-6 pb-2">
+                                    {formattedDate || "Select a date"}
+                                </h3>
+                                <div className="flex-1 overflow-y-auto md:pl-6 space-y-3 pr-2 scrollbar-thin scrollbar-thumb-gray-200">
+                                    <p className="text-xs text-stone-500 mb-4 sticky top-0 bg-white dark:bg-gray-800 pb-2 z-10">
+                                        <span className="text-[#F2A65A] font-bold">Highlighted:</span> Recommended Sunrise/Sunset Times
+                                    </p>
+                                    {timeSlots.map((slot) => {
+                                        const isRecommended = isHighlightTime(slot.time);
+                                        return (
+                                            <button
+                                                key={slot.time}
+                                                onClick={() => {
+                                                    if (slot.available) {
+                                                        setSelectedTime(slot.time);
+                                                        onTimeChange?.(slot.time);
+                                                    }
+                                                }}
+                                                disabled={!slot.available}
+                                                className={`w-full px-4 py-2.5 md:py-3 text-sm md:text-base rounded-xl border transition-all duration-200 shrink-0 font-medium relative ${selectedTime === slot.time && slot.available
+                                                    ? "bg-[#F2A65A] text-white border-[#F2A65A] shadow-md transform scale-[1.02]"
+                                                    : slot.available
+                                                        ? isRecommended
+                                                            ? "bg-[#F2A65A]/10 text-[#F2A65A] border-[#F2A65A]/30 hover:bg-[#F2A65A]/20"
+                                                            : "bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
+                                                        : "bg-gray-50 dark:bg-gray-800/50 text-gray-400 dark:text-gray-600 border-gray-100 dark:border-gray-700/50 cursor-not-allowed opacity-60"
+                                                    }`}
+                                            >
+                                                {slot.time}
+                                                {isRecommended && slot.available && selectedTime !== slot.time && (
+                                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#F2A65A]"></span>
+                                                )}
+                                            </button>
+                                        );
+                                    })}
                                 </div>
-                            );
-                        }}
-                    </DatePicker.Context>
-                </DatePicker.Content>
-            </div>
-        </DatePicker.Root>
+                            </div>
+                        );
+                    }}
+                </DatePicker.Context>
+            </DatePicker.Content>
+
+        </DatePicker.Root >
     );
 }
