@@ -1,22 +1,64 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
+import { Instagram, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
-import { Reveal } from './ui/reveal';
+import { FocusRail, type FocusRailItem } from './ui/focus-rail';
 
-const reelIds = [
-    "DUnzYZhD0zn", // Original one
-    "DUGRCyMk9D-",
-    "DTNwr9IEwWd",
-    "DTNnnolE52l",
-    "DTKZJUyki1w",
-    "DTIcNOfEpNl"
+const REEL_ITEMS: FocusRailItem[] = [
+    {
+        id: 1,
+        title: "Morning Rides",
+        description: "Start your day with a breathtaking sunrise ride.",
+        meta: "Instagram Reel",
+        imageSrc: "https://images.unsplash.com/photo-1759357865886-96c9b0388c2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZWJhY2slMjByaWRpbmclMjBzdW5yaXNlJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY4MTc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        href: "https://www.instagram.com/reel/DUnzYZhD0zn",
+    },
+    {
+        id: 2,
+        title: "Trail Adventures",
+        description: "Explore hidden paths and deep forests.",
+        meta: "Instagram Reel",
+        imageSrc: "https://images.unsplash.com/photo-1625749670846-8d5629e85a01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb3Jlc3QlMjB0cmFpbCUyMG5hdHVyZXxlbnwxfHx8fDE3NzEwNjkwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        href: "https://www.instagram.com/reel/DUGRCyMk9D-",
+    },
+    {
+        id: 3,
+        title: "Ranch Vibes",
+        description: "Experience the authentic ranch atmosphere.",
+        meta: "Instagram Reel",
+        imageSrc: "https://images.unsplash.com/photo-1658379515186-b7b9524c9ddb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZSUyMHJhbmNoJTIwZmFybXxlbnwxfHx8fDE3NzEwNjkwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        href: "https://www.instagram.com/reel/DTNwr9IEwWd",
+    },
+    {
+        id: 4,
+        title: "Sunset Gallery",
+        description: "Watch the sky turn gold over the ranch.",
+        meta: "Instagram Reel",
+        imageSrc: "https://images.unsplash.com/photo-1637481819841-4795ab86da6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW1waW5nJTIwdGVudCUyMHN1bnNldHxlbnwxfHx8fDE3NzEwNjkwNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+        href: "https://www.instagram.com/reel/DTNnnolE52l",
+    },
+    {
+        id: 5,
+        title: "Horse Bonding",
+        description: "Connect with our friendly horses.",
+        meta: "Instagram Reel",
+        imageSrc: "https://images.unsplash.com/photo-1694941950578-3364241bf12f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3JzZXMlMjBjbG9zZSUyMHVwJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzcxMDY5MDYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        href: "https://www.instagram.com/reel/DTKZJUyki1w",
+    },
+    {
+        id: 6,
+        title: "Action Shots",
+        description: "Feel the thrill of the gallop.",
+        meta: "Instagram Reel",
+        imageSrc: "https://images.unsplash.com/photo-1758881534566-fd5c54d7e7c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqZWVwJTIwc2FmYXJpJTIwY291bnRyeXNpZGV8ZW58MXx8fHwxNzcxMDY5MDU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+        href: "https://www.instagram.com/reel/DTIcNOfEpNl",
+    }
 ];
 
 export function ReelsSection() {
     return (
-        <section className="py-24 px-4 bg-stone-900 text-white overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
+        <section className="py-24 px-4 bg-stone-900 text-white overflow-hidden flex flex-col items-center">
+            <div className="max-w-7xl mx-auto w-full">
+                <div className="text-center mb-12">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F2A65A]/10 rounded-full mb-4">
                         <Instagram className="h-4 w-4 text-[#F2A65A]" />
                         <span className="text-sm font-medium text-[#F2A65A]">@theecoranch</span>
@@ -27,27 +69,16 @@ export function ReelsSection() {
                     </p>
                 </div>
 
-                <Reveal>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-                        {reelIds.map((id, index) => (
-                            <div key={id} className="flex justify-center transform hover:scale-105 transition-transform duration-300 w-full">
-                                <div className="relative w-full max-w-[350px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-                                    <iframe
-                                        src={`https://www.instagram.com/reel/${id}/embed`}
-                                        className="absolute inset-0 w-full h-full"
-                                        frameBorder="0"
-                                        scrolling="no"
-                                        allowTransparency={true}
-                                        allow="encrypted-media"
-                                        title={`Instagram Reel ${index + 1}`}
-                                    ></iframe>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </Reveal>
+                {/* FocusRail Implementation replacing the grid */}
+                <FocusRail
+                    items={REEL_ITEMS}
+                    autoPlay={false}
+                    loop={true}
+                    className="w-full"
+                />
 
-                <div className="text-center mt-12">
+                <div className="text-center mt-12 space-y-4">
+                    <p className="text-white/60 text-sm">Tap or drag cards to explore reels</p>
                     <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full px-8 py-6 text-lg hover:shadow-lg hover:shadow-pink-500/30 transition-all">
                         <a href="https://www.instagram.com/theecoranch" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                             <Instagram className="w-5 h-5" />

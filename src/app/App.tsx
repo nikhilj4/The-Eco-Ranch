@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeroHeader } from './components/HeroHeader';
 import { HeroSection } from './components/HeroSection';
-import { FocusRailSection } from './components/FocusRailSection';
 import { SignatureExperiences } from './components/SignatureExperiences';
 import { PremiumAddOns } from './components/PremiumAddOns';
 import { SEOContent } from './components/SEOContent';
@@ -18,7 +17,6 @@ export default function App() {
     <div className="min-h-screen bg-stone-50 selection:bg-[#F2A65A]/30">
       <HeroHeader />
       <HeroSection />
-      <FocusRailSection />
       <SignatureExperiences />
       <PremiumAddOns />
       <Gallery />
