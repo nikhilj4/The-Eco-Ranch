@@ -13,7 +13,7 @@ export function HeroSection() {
                     muted
                     loop
                     playsInline
-                    className="size-full object-cover scale-105"
+                    className="absolute inset-0 w-full h-full object-cover scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
             </div>
