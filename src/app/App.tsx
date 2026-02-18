@@ -11,7 +11,6 @@ import { RanchRules } from './components/RanchRules';
 import { QuickBookFlow } from './components/QuickBookFlow';
 import { BookingSection } from './components/BookingSection';
 import { Footer } from './components/Footer';
-import { FloatingInstagramButton } from './components/FloatingInstagramButton';
 
 export default function App() {
   return (
@@ -27,7 +26,6 @@ export default function App() {
       <SEOContent />
       <QuickBookFlow />
       <BookingSection />
-      <FloatingInstagramButton />
       <Footer />
     </div>
   );
