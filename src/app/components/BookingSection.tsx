@@ -332,7 +332,7 @@ export function BookingSection() {
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-1">Phone Number</label>
+                                    <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-stone-500 mb-1">Your Number</label>
                                     <input
                                         type="tel"
                                         id="phone"
