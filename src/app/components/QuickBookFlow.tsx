@@ -13,7 +13,7 @@ export function QuickBookFlow() {
                     </div>
                     <h2 className="text-3xl md:text-6xl font-bold mb-6">Book in Minutes</h2>
                     <p className="text-xl text-stone-600 max-w-2xl mx-auto font-light">
-                        No login required • Instant confirmation via WhatsApp
+                        No login required • Instant confirmation via Email
                     </p>
                 </div>
 
