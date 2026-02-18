@@ -134,7 +134,7 @@ export function SignatureExperiences() {
                             {
                                 name: 'Wedding Photoshoot',
                                 description: 'Capture your special day with majestic horses in nature',
-                                image: '/images/gallery/gallery-1.png',
+                                image: '/images/experiences/wedding-image.jpeg',
                                 details: ["Magical golden hour shots", "Well-groomed horses", "Assistants provided", "Unlimited outfit changes"]
                             },
                             {

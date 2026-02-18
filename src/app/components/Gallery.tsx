@@ -7,7 +7,7 @@ const galleryItems = [
   {
     id: 1,
     type: 'video',
-    src: "/videos/gallery/video-1.mov",
+    src: "/videos/gallery/video-1.mp4",
     alt: "Ranch Adventure Video",
     span: "md:col-span-2 md:row-span-2"
   },
@@ -21,7 +21,7 @@ const galleryItems = [
   {
     id: 3,
     type: 'video',
-    src: "/videos/gallery/video-2.mov",
+    src: "/videos/gallery/video-2.mp4",
     alt: "Morning Routine",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -30,14 +30,14 @@ const galleryItems = [
   {
     id: 4,
     type: 'video',
-    src: "/videos/gallery/video-5.mov", // New
+    src: "/videos/gallery/video-5.mp4", // New
     alt: "Horse Training",
     span: "md:col-span-1 md:row-span-2"
   },
   {
     id: 5,
     type: 'video',
-    src: "/videos/gallery/video-3.mov",
+    src: "/videos/gallery/video-3.mp4",
     alt: "Group Ride",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -46,7 +46,7 @@ const galleryItems = [
   {
     id: 6,
     type: 'video',
-    src: "/videos/gallery/video-4.mov",
+    src: "/videos/gallery/video-4.mp4",
     alt: "Sunset Gallop",
     span: "md:col-span-2 md:row-span-1"
   },
@@ -62,7 +62,7 @@ const galleryItems = [
   {
     id: 8,
     type: 'video',
-    src: "/videos/gallery/video-6.mov", // New
+    src: "/videos/gallery/video-6.mp4", // New
     alt: "Stable Life",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -76,7 +76,7 @@ const galleryItems = [
   {
     id: 10,
     type: 'video',
-    src: "/videos/gallery/video-7.mov", // New
+    src: "/videos/gallery/video-7.mp4", // New
     alt: "Riding Lesson",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -85,42 +85,42 @@ const galleryItems = [
   {
     id: 11,
     type: 'video',
-    src: "/videos/gallery/video-8.mov", // New
+    src: "/videos/gallery/video-8.mp4", // New
     alt: "Nature Walk",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 12,
     type: 'video',
-    src: "/videos/gallery/video-9.mov", // New
+    src: "/videos/gallery/video-9.mp4", // New
     alt: "Horse Care",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 13,
     type: 'video',
-    src: "/videos/gallery/video-10.mov", // New
+    src: "/videos/gallery/video-10.mp4", // New
     alt: "Feeding Time",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 14,
     type: 'video',
-    src: "/videos/gallery/video-11.mov", // New
+    src: "/videos/gallery/video-11.mp4", // New
     alt: "Reviewing Footage",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 15,
     type: 'video',
-    src: "/videos/gallery/video-12.mov", // New
+    src: "/videos/gallery/video-12.mp4", // New
     alt: "Preparing for Ride",
     span: "md:col-span-2 md:row-span-1"
   },
   {
     id: 16,
     type: 'video',
-    src: "/videos/gallery/video-13.mov", // New
+    src: "/videos/gallery/video-13.mp4", // New
     alt: "Relaxing at Camp",
     span: "md:col-span-2 md:row-span-1"
   }

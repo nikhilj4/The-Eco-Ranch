@@ -59,7 +59,7 @@ export function StaysSection() {
                         unit="/person"
                         description="Shared accommodation with fellow adventurers"
                         image="/images/gallery/gallery-7.png"
-                        details={["Bunk beds", "Lockers provided", "Shared washroom", "Social space"]}
+                        details={["Individual bed", "Lockers provided", "Shared washroom", "Social space"]}
                         trigger={
                             <Card className="h-full bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer text-left">
                                 <CardHeader className="p-3 md:p-6 pb-2 md:pb-4">
@@ -90,7 +90,7 @@ export function StaysSection() {
                         unit="/for 2"
                         description="Your own space with complete privacy"
                         image="/images/gallery/gallery-8.png"
-                        details={["Queen size bed", "Attached washroom", "Private balcony", "Room service"]}
+                        details={["Queen size bed", "Attached washroom", "Room service"]}
                         trigger={
                             <Card className="h-full bg-white/10 backdrop-blur-md border-2 border-[#F2A65A] text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-2xl md:rounded-3xl overflow-hidden relative cursor-pointer text-left">
                                 <div className="absolute top-2 right-2 md:top-4 md:right-4">
