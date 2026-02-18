@@ -18,7 +18,7 @@ export function Footer() {
                                 <Phone className="h-5 w-5" />
                                 +91 74118 89506
                             </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                            <a href="https://www.instagram.com/theecoranch?igsh=MWkzNGhtaGpwNTVhNg==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
                                 <Instagram className="h-5 w-5" />
                                 Follow us on Instagram
                             </a>
