@@ -204,7 +204,7 @@ export const AppointmentDatePicker = ({ onDateChange, onTimeChange }: Appointmen
                             : "";
 
                         return (
-                            <div className="border-t pt-4 md:pt-0 md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 w-full md:w-72 flex flex-col h-80 md:h-auto md:min-h-[400px]">
+                            <div className="border-t pt-4 md:pt-0 md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 w-full md:w-72 flex flex-col h-80 md:h-[420px]">
                                 <h3 className="text-sm md:text-base font-semibold text-gray-900 dark:text-gray-100 mb-2 shrink-0 md:pl-6 pb-2">
                                     {formattedDate || "Select a date"}
                                 </h3>

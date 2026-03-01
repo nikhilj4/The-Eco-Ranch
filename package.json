@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "concurrently \"vite\" \"node server.js\"",
+    "server": "node server.js"
   },
   "dependencies": {
     "@ark-ui/react": "^5.31.0",
@@ -76,6 +77,7 @@
     "@tailwindcss/vite": "4.1.12",
     "@types/nodemailer": "^7.0.10",
     "@vitejs/plugin-react": "4.7.0",
+    "concurrently": "^9.2.1",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
   },

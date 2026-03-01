@@ -207,7 +207,7 @@ export function BookingSection() {
 
         } catch (error) {
             console.error("Payment Error:", error);
-            alert('Something went wrong. check console.');
+            alert('Unable to initiate payment.Please ensure backend server is running on port 3001.');
         }
     };
 
@@ -339,7 +339,7 @@ export function BookingSection() {
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                         className="block w-full rounded-xl border-stone-200 py-2.5 text-sm focus:ring-[#F2A65A] bg-stone-50"
-                                        placeholder="+91 98765 43210"
+                                        placeholder="+91 98765XXXXX"
                                     />
                                 </div>
                                 <div>
