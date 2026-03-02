@@ -63,41 +63,91 @@ app.post('/api/razorpay', async (req, res) => {
     }
 });
 
-// Send Invoice Email API
-app.post('/api/send-invoice', async (req, res) => {
+// Send Enquiry Email API
+app.post('/api/send-enquiry', async (req, res) => {
     try {
-        const { email, invoiceData, invoiceNumber } = req.body;
+        const { name, email, phone, items, totalAmount, date, time } = req.body;
+
+        const itemRows = items.map(item =>
+            `<tr>
+                <td style="padding:10px 12px;border-bottom:1px solid #eee;">${item.name}</td>
+                <td style="padding:10px 12px;border-bottom:1px solid #eee;text-align:center;">${item.qty}</td>
+                <td style="padding:10px 12px;border-bottom:1px solid #eee;text-align:right;">Rs ${item.price.toLocaleString('en-IN')}</td>
+                <td style="padding:10px 12px;border-bottom:1px solid #eee;text-align:right;font-weight:600;">Rs ${(item.price * item.qty).toLocaleString('en-IN')}</td>
+            </tr>`
+        ).join('');
 
         const mailOptions = {
             from: `"The Eco Ranch" <${process.env.EMAIL_USER}>`,
             to: email,
-            subject: `Booking Confirmed - Invoice #${invoiceNumber}`,
+            subject: `Thank You for Your Enquiry – The Eco Ranch`,
             html: `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
-                    <h2 style="color: #6F8F72; text-align: center;">Booking Confirmation</h2>
-                    <p>Dear Customer,</p>
-                    <p>Thank you for choosing <strong>The Eco Ranch</strong>. Your booking has been successfully confirmed.</p>
-                    
-                    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                        <p><strong>Invoice Number:</strong> ${invoiceNumber}</p>
-                        <p><strong>Date of Visit:</strong> ${invoiceData.date}</p>
-                        <p><strong>Time:</strong> ${invoiceData.time}</p>
-                        <p><strong>Total Amount:</strong> Rs ${invoiceData.amount}</p>
+                <div style="font-family:'Segoe UI',Arial,sans-serif;max-width:620px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e8e8e8;">
+                    <!-- Header -->
+                    <div style="background:#6F8F72;padding:36px 32px;text-align:center;">
+                        <h1 style="color:#fff;margin:0;font-size:26px;letter-spacing:0.5px;">The Eco Ranch</h1>
+                        <p style="color:rgba(255,255,255,0.8);margin:6px 0 0;font-size:13px;">Kanakapura, Karnataka • +91 74118 89506</p>
                     </div>
 
-                    <p>We are excited to host you for your adventure!</p>
-                    <p style="font-size: 12px; color: #888;">For any queries, contact us at +91 74118 89506.</p>
+                    <!-- Body -->
+                    <div style="padding:32px;">
+                        <h2 style="color:#3d3d3d;margin:0 0 8px;font-size:20px;">Thank you for your enquiry, ${name}! 🐴</h2>
+                        <p style="color:#666;font-size:15px;line-height:1.6;margin:0 0 24px;">
+                            We've received your enquiry and our team will reach out to you on <strong>${phone}</strong> shortly to confirm your booking.
+                        </p>
+
+                        <!-- Enquiry Summary -->
+                        <div style="background:#f7faf7;border-radius:12px;padding:20px;margin-bottom:24px;">
+                            <p style="margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:0.8px;color:#6F8F72;font-weight:700;">Enquiry Summary</p>
+                            <p style="margin:4px 0;font-size:14px;color:#555;"><strong>Preferred Date:</strong> ${date || 'To be confirmed'}</p>
+                            <p style="margin:4px 0;font-size:14px;color:#555;"><strong>Preferred Time:</strong> ${time || 'To be confirmed'}</p>
+                        </div>
+
+                        <!-- Price Breakdown Table -->
+                        <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:8px;">
+                            <thead>
+                                <tr style="background:#6F8F72;">
+                                    <th style="padding:10px 12px;color:#fff;text-align:left;border-radius:8px 0 0 0;">Item</th>
+                                    <th style="padding:10px 12px;color:#fff;text-align:center;">Qty</th>
+                                    <th style="padding:10px 12px;color:#fff;text-align:right;">Unit Price</th>
+                                    <th style="padding:10px 12px;color:#fff;text-align:right;border-radius:0 8px 0 0;">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody style="color:#444;">
+                                ${itemRows}
+                            </tbody>
+                            <tfoot>
+                                <tr style="background:#FFF8F0;">
+                                    <td colspan="3" style="padding:12px;font-weight:700;font-size:15px;color:#3d3d3d;">Grand Total (Estimate)</td>
+                                    <td style="padding:12px;font-weight:700;font-size:17px;color:#F2A65A;text-align:right;">Rs ${totalAmount.toLocaleString('en-IN')}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <p style="font-size:12px;color:#aaa;margin:0 0 28px;">*Final pricing may vary. Our team will confirm on WhatsApp/call.</p>
+
+                        <!-- CTA -->
+                        <div style="text-align:center;margin-bottom:28px;">
+                            <a href="https://wa.me/917411889506" style="display:inline-block;background:#25D366;color:#fff;font-weight:700;padding:14px 36px;border-radius:50px;text-decoration:none;font-size:15px;">💬 Chat with us on WhatsApp</a>
+                        </div>
+
+                        <p style="color:#888;font-size:13px;text-align:center;margin:0;">Looking forward to hosting you at The Eco Ranch!</p>
+                    </div>
+
+                    <!-- Footer -->
+                    <div style="background:#f2f2f2;padding:16px 32px;text-align:center;">
+                        <p style="color:#aaa;font-size:12px;margin:0;">© ${new Date().getFullYear()} The Eco Ranch, Kanakapura. All rights reserved.</p>
+                    </div>
                 </div>
             `,
         };
 
         await transporter.sendMail(mailOptions);
-        console.log(`Email sent to ${email}`);
-        res.json({ success: true, message: 'Email sent successfully' });
+        console.log(`Enquiry email sent to ${email}`);
+        res.json({ success: true, message: 'Enquiry email sent successfully' });
 
     } catch (error) {
-        console.error('Email Error:', error);
-        res.status(500).json({ success: false, error: 'Failed to send email' });
+        console.error('Enquiry Email Error:', error);
+        res.status(500).json({ success: false, error: 'Failed to send enquiry email' });
     }
 });
 
