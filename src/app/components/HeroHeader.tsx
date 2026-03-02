@@ -8,7 +8,7 @@ const menuItems = [
     { name: 'About', href: '#rules' },
     { name: 'Services', href: '#experiences' },
     { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#booking' },
+    { name: 'Contact', href: '#footer' },
 ]
 
 export function HeroHeader() {
@@ -88,7 +88,7 @@ export function HeroHeader() {
                                     variant="outline"
                                     size="sm"
                                     className="border-stone-200 text-stone-700 hover:bg-stone-100 h-10 px-6 rounded-full font-medium">
-                                    <a href="#contact">
+                                    <a href="#footer">
                                         <span>Contact Us</span>
                                     </a>
                                 </Button>

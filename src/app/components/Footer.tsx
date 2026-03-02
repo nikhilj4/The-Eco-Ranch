@@ -3,7 +3,7 @@ import { Phone, Instagram } from 'lucide-react';
 
 export function Footer() {
     return (
-        <footer className="bg-[#6F8F72] text-white py-16 px-4">
+        <footer id="footer" className="bg-[#6F8F72] text-white py-16 px-4">
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-3 gap-12 mb-12">
                     <div>
