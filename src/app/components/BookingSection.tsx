@@ -9,8 +9,8 @@ const PRODUCTS = [
     { id: 'ride-2', type: 'Ride', name: 'Wildwood Safari', price: 4000, image: '/images/experiences/wildwood-safari.png', unit: 'person' },
     { id: 'ride-3', type: 'Ride', name: 'Summit Ride', price: 4500, image: '/images/experiences/summit-ride.png', unit: 'person' },
     { id: 'stay-1', type: 'Stay', name: 'Rustic Tent', price: 1300, image: '/images/gallery/gallery-4.png', unit: 'person' },
-    { id: 'stay-2', type: 'Stay', name: 'Cozy Dorm', price: 1800, image: '/images/cozy-dorm.jpeg', unit: 'person' },
-    { id: 'stay-3', type: 'Stay', name: 'Private Room', price: 4500, image: '/images/private-room.jpeg', unit: 'room (2 pax)' },
+    { id: 'stay-2', type: 'Stay', name: 'Cozy Dorm', price: 1800, image: '/images/dorm.jpeg', unit: 'person' },
+    { id: 'stay-3', type: 'Stay', name: 'Private Room', price: 5000, image: '/images/private-room.jpeg', unit: 'room (2 pax)' },
 ];
 
 export function BookingSection() {

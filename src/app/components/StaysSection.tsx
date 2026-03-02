@@ -58,7 +58,7 @@ export function StaysSection() {
                         price="Rs 1,800"
                         unit="/person"
                         description="Shared accommodation with fellow adventurers"
-                        image="/images/cozy-dorm.jpeg"
+                        image="/images/dorm.jpeg"
                         details={["Individual bed", "Lockers provided", "Shared washroom", "Social space"]}
                         trigger={
                             <Card className="h-full bg-white/10 backdrop-blur-md border-white/20 text-white hover:shadow-2xl hover:shadow-black/20 transition-all duration-300 rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer text-left">
@@ -71,7 +71,7 @@ export function StaysSection() {
                                         Rs 1,800<span className="text-[10px] md:text-sm text-white/60 font-normal">/person</span>
                                     </div>
                                     <img
-                                        src="/images/cozy-dorm.jpeg"
+                                        src="/images/dorm.jpeg"
                                         alt="Cozy dorm"
                                         className="w-full h-32 md:h-48 object-cover rounded-xl md:rounded-2xl mb-3 md:mb-6"
                                         loading="lazy"
@@ -86,7 +86,7 @@ export function StaysSection() {
 
                     <PackageModal
                         title="Private Room"
-                        price="Rs 4,500"
+                        price="Rs 5,000"
                         unit="/for 2"
                         description="Your own space with complete privacy"
                         image="/images/private-room.jpeg"
@@ -102,7 +102,7 @@ export function StaysSection() {
                                 </CardHeader>
                                 <CardContent className="p-3 md:p-6 pt-0 md:pt-0">
                                     <div className="text-lg md:text-5xl font-bold text-[#F2A65A] mb-2 md:mb-6">
-                                        Rs 4,500<span className="text-[10px] md:text-sm text-white/60 font-normal">/for 2</span>
+                                        Rs 5,000<span className="text-[10px] md:text-sm text-white/60 font-normal">/for 2</span>
                                     </div>
                                     <img
                                         src="/images/private-room.jpeg"
